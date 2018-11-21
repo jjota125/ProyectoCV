@@ -59,7 +59,7 @@ window.onload = function(){
 
 }
 
-function myFunction() {
+function infoPersonal() {
   var nombre = document.getElementById("nombre");
   var lNombre = document.getElementById("lNombre");
   var apellidos = document.getElementById("apellidos");
@@ -68,6 +68,7 @@ function myFunction() {
   var lEMail = document.getElementById("lEMail");
   var telefono = document.getElementById("telefono");
   var lTelefono = document.getElementById("lTelefono");
+  var bInfoPersonal = document.getElementById("bInfoPersonal");
 
   lNombre.innerHTML = document.getElementById("nombre").value;
   lApellidos.innerHTML = document.getElementById("apellidos").value;
@@ -84,6 +85,8 @@ function myFunction() {
       lApellidos.style.display = "none";
       lEMail.style.display = "none";
       lTelefono.style.display = "none";
+
+      bInfoPersonal.textContent = "Vista previa"
       
   } else {
       nombre.style.display = "none";
@@ -95,6 +98,8 @@ function myFunction() {
       lApellidos.style.display = "block";
       lEMail.style.display = "block";
       lTelefono.style.display = "block";
+
+      bInfoPersonal.textContent = "Editar"
       
   }
   
