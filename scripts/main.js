@@ -87,7 +87,8 @@ function infoPersonal() {
       lTelefono.style.display = "none";
 
       bInfoPersonal.textContent = "Vista previa"
-      
+
+            
   } else {
       nombre.style.display = "none";
       apellidos.style.display = "none";
@@ -101,6 +102,10 @@ function infoPersonal() {
 
       bInfoPersonal.textContent = "Editar"
       
+      if (document.getElementById("nombre").value === "" || document.getElementById("apellidos").value === "" || document.getElementById("email").value === "" || document.getElementById("telefono").value === "") {
+        toastr.error("No ha ingresado toda su información personal", "Aviso!");
+  
+      }
   }
   
 }
