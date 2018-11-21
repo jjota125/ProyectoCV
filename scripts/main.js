@@ -113,6 +113,9 @@ function infoPersonal() {
         toastr.error("No ha ingresado toda su información personal", "Aviso!");
   
       }
+     if(document.getElementById("resumen").value === ""){
+      toastr.error("No ha ingresado su resumen", "Aviso!");
+    }
   }
   
 }
