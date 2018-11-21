@@ -68,23 +68,28 @@ function infoPersonal() {
   var lEMail = document.getElementById("lEMail");
   var telefono = document.getElementById("telefono");
   var lTelefono = document.getElementById("lTelefono");
+  var resumen = document.getElementById("resumen");
+  var lResumen = document.getElementById("lResumen");
   var bInfoPersonal = document.getElementById("bInfoPersonal");
 
   lNombre.innerHTML = document.getElementById("nombre").value;
   lApellidos.innerHTML = document.getElementById("apellidos").value;
   lEMail.innerHTML = document.getElementById("email").value;
   lTelefono.innerHTML = document.getElementById("telefono").value;
+  lResumen.innerHTML = document.getElementById("resumen").value;
 
-  if (nombre.style.display === "none" && apellidos.style.display === "none" && email.style.display === "none" && telefono.style.display === "none") {
+  if (nombre.style.display === "none" && apellidos.style.display === "none" && email.style.display === "none" && telefono.style.display === "none" && resumen.style.display == "none") { 
       nombre.style.display = "block";
       apellidos.style.display = "block";
       email.style.display = "block";
       telefono.style.display = "block";
+      resumen.style.display = "block";
 
       lNombre.style.display = "none";
       lApellidos.style.display = "none";
       lEMail.style.display = "none";
       lTelefono.style.display = "none";
+      lResumen.style.display = "none";
 
       bInfoPersonal.textContent = "Vista previa"
       
@@ -93,11 +98,13 @@ function infoPersonal() {
       apellidos.style.display = "none";
       email.style.display = "none";
       telefono.style.display = "none";
-
+      resumen.style.display = "none";
+    
       lNombre.style.display = "block";
       lApellidos.style.display = "block";
       lEMail.style.display = "block";
       lTelefono.style.display = "block";
+      lResumen.style.display = "block";
 
       bInfoPersonal.textContent = "Editar"
       
