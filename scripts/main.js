@@ -56,6 +56,48 @@ window.onload = function(){
 
 }
 
+function myFunction() {
+  var nombre = document.getElementById("nombre");
+  var lNombre = document.getElementById("lNombre");
+  var apellidos = document.getElementById("apellidos");
+  var lApellidos = document.getElementById("lApellidos");
+  var email = document.getElementById("email");
+  var lEMail = document.getElementById("lEMail");
+  var telefono = document.getElementById("telefono");
+  var lTelefono = document.getElementById("lTelefono");
+
+  lNombre.innerHTML = document.getElementById("nombre").value;
+  lApellidos.innerHTML = document.getElementById("apellidos").value;
+  lEMail.innerHTML = document.getElementById("email").value;
+  lTelefono.innerHTML = document.getElementById("telefono").value;
+
+  if (nombre.style.display === "none" && apellidos.style.display === "none" && email.style.display === "none" && telefono.style.display === "none") {
+      nombre.style.display = "block";
+      apellidos.style.display = "block";
+      email.style.display = "block";
+      telefono.style.display = "block";
+
+      lNombre.style.display = "none";
+      lApellidos.style.display = "none";
+      lEMail.style.display = "none";
+      lTelefono.style.display = "none";
+      
+  } else {
+      nombre.style.display = "none";
+      apellidos.style.display = "none";
+      email.style.display = "none";
+      telefono.style.display = "none";
+
+      lNombre.style.display = "block";
+      lApellidos.style.display = "block";
+      lEMail.style.display = "block";
+      lTelefono.style.display = "block";
+      
+  }
+  
+}
+
+
 
 
 //Agrega textbox dinámicamente al pulsar el botón add y elimina al usar el botón remove
@@ -106,3 +148,4 @@ $(document).ready(function () {
       $(".skills .control-group:last").remove();
   });
 });
+

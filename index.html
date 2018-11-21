@@ -71,23 +71,32 @@
             <div class="row">
               <!-- Write your comments here -->
               <div class="col-sm-4"><strong class="text-uppercase">Nombre:</strong></div>
-              <div class="col-sm-8"><input type="text" maxlength="20" name="firstname" required></div>
-            </div>
+              <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "su nombre aquí" id="nombre" required>
+              <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="nombre" placeholder = "algo" required>Click para añadir nombre</label> -->
+              <label type="label" id="lNombre"></label></div>
+              </div>
             <div class="row mt-3">
                 <div class="col-sm-4"><strong class="text-uppercase">Apellidos:</strong></div>
-                <div class="col-sm-8"><input type="text" maxlength="20" name="firstname" required></div>
+                <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "su apellido aquí" id="apellidos" required>
+                <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="apellidos" required>Click para añadir apellidos</label> -->
+              <label type="label" id="lApellidos">lApellido</label></div>  
               </div>
             <div class="row mt-3">
                 <div class="col-sm-4"><strong class="text-uppercase">E-mail:</strong></div>
-                <div class="col-sm-8"><input type="text" maxlength="20" name="firstname" required></div>
-              </div>
+                <div class="col-sm-8"><input type="email" maxlength="20" placeholder = "su E-mail aquí" id="email" required>
+                <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="email" required>Click para añadir E-mail</label> -->
+                <label type="label" id="lEMail">lEMail</label></div>  
+                </div>
             <div class="row mt-3">
                 <div class="col-sm-4"><strong class="text-uppercase">Teléfono:</strong></div>
-                <div class="col-sm-8"><input type="text" maxlength="20" name="firstname" required></div>
+                <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "su teléfono aquí" id="telefono" required>
+                <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
+                  <label type="label" id="lTelefono">lTelefono</label></div>  
               </div>
             <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
-              <div class="col-sm-8">English, German, French</div>
+                <!--<input type='button' value='Agregar información' id='infoButton' />-->
+                <button onclick="myFunction()">Enviar información</button>
+              <!--<div class="col-sm-8"><input type="reset"></strong></div>-->
             </div>
           </div>
         </div>
