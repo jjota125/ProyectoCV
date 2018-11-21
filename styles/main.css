@@ -7275,3 +7275,11 @@ a.credit {
 .section {
   padding-bottom: 0;
 }
+
+
+
+
+.toast {
+  opacity: 1 !important;
+}
+

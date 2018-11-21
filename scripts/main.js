@@ -1,6 +1,9 @@
 // Add your javascript here
 // Don't forget to add it into respective layouts where this js file is needed
 
+
+
+
 $(document).ready(function() {
   AOS.init( {
     // uncomment below for on-scroll animations to played only once
@@ -103,6 +106,26 @@ function myFunction() {
 //Agrega textbox dinámicamente al pulsar el botón add y elimina al usar el botón remove
 $(document).ready(function () {
 
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-full-width",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "8000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+
+
   $("#addButton").click(function () {
       //if( ($('.form-horizontal .control-group').length+1) > 2) { //Agregar un máximo
       //    alert("Only 2 control-group allowed");
@@ -120,29 +143,34 @@ $(document).ready(function () {
 
       }else if( selectedIndex === 1){
 
-        nivelHabilidad = "Intermedio";
-        porcentajeHabilidad = 60;
+      nivelHabilidad = "Intermedio";
+      porcentajeHabilidad = 60;
 
-      }else if ( selectedIndex === 2){
+    } else if (selectedIndex === 2) {
 
-        nivelHabilidad = "Experto";
-         porcentajeHabilidad = 90; 
-      }
-      
+      nivelHabilidad = "Experto";
+      porcentajeHabilidad = 90;
+    }
 
 
+    //validar campos
+    if (nombreHabilidad === "") {
+      toastr.error("No ha ingresado el nombre de la habilidad", "Aviso!");
+
+    } else {
+
+      //Agrega dinamicamente código en la pag
       var id = ($('.skills .control-group').length + 1).toString();
       //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
-      
-      $('.skills').append('<div  class="control-group col-md-12 " id="control-group' + id + '" ><div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: '+ porcentajeHabilidad +'%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
-     
 
-    });
+      $('.skills').append('<div  class="control-group col-md-12 " id="control-group' + id + '" ><div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
+    }
+
+  });
 
   $("#removeButton").click(function () {
-      if ($('.skills .control-group').length == 0) {
-          alert("No existen más habilidades para eliminar");
-          return false;
+      if ($('.skills .control-group').length == 0) {    
+          toastr.error("No existen más habilidades para eliminar", "Aviso!");
       }
 
       $(".skills .control-group:last").remove();
