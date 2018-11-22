@@ -176,6 +176,7 @@ $(document).ready(function () {
     //validar campos
     if (nombreHabilidad === "") {
       toastr.error("No ha ingresado el nombre de la habilidad", "Aviso!");
+      document.getElementById('habilidad').style.border ="2px solid red";
 
     } else {
 
@@ -184,16 +185,14 @@ $(document).ready(function () {
       //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
 
       $('.skills').append('<div  class="control-group col-md-12 " id="control-group' + id + '" ><div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
+    
+      document.getElementById('habilidad').style.border ="";
+    
+    
     }
 
   });
 
-  $("#removeButton").click(function () {
-      if ($('.skills .control-group').length == 0) {    
-          toastr.error("No existen más habilidades para eliminar", "Aviso!");
-      }
-
-      $(".skills .control-group:last").remove();
-  });
+  
 });
 
