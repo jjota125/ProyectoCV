@@ -53,6 +53,7 @@ var nombreHabilidad;
 var nivelHabilidad;
 var porcentajeHabilidad;
 var selectedIndex;
+var completo;
 
 //Cuando ya la pag esté cargada entonces sigue
 window.onload = function(){
@@ -72,6 +73,7 @@ function infoPersonal() {
   var resumen = document.getElementById("resumen");
   var lResumen = document.getElementById("lResumen");
   var bInfoPersonal = document.getElementById("bInfoPersonal");
+  completo = true;
 
   lNombre.innerHTML = document.getElementById("nombre").value;
   lApellidos.innerHTML = document.getElementById("apellidos").value;
@@ -79,7 +81,7 @@ function infoPersonal() {
   lTelefono.innerHTML = document.getElementById("telefono").value;
   lResumen.innerHTML = document.getElementById("resumen").value;
 
-  // Cuando se presiona el botón con el texto "Editar". Se ocultan los espacios de input y se revelan los labels con el texto ingresado
+  // Cuando se presiona el botón con el texto "Editar". Se ocultan los labels y se revelan los espacios de input para editar la información
   if (nombre.style.display === "none" && apellidos.style.display === "none" && email.style.display === "none" && telefono.style.display === "none" && resumen.style.display == "none") { 
       nombre.style.display = "block";
       apellidos.style.display = "block";
@@ -96,7 +98,7 @@ function infoPersonal() {
       //Cambio de texto a "Vista previa" en el botón
       bInfoPersonal.textContent = "Vista previa"
 
-  // Cuando se presiona el botón con el texto "Vista previa". Se ocultan los labels y se revelan los espacios de input para editar la información          
+  // Cuando se presiona el botón con el texto "Vista previa". Se ocultan los espacios de input y se revelan los labels con el texto ingresado          
   } else {
       nombre.style.display = "none";
       apellidos.style.display = "none";
@@ -121,25 +123,40 @@ function infoPersonal() {
       
       // Revisión de espacios de input vacíos  
       if (nombre.value === "") {
-        toastr.error("No ha ingresado su nombre", "¡Aviso!");
+        //toastr.error("No ha ingresado su nombre", "¡Aviso!");
         nombre.style.border ="2px solid red";
+        completo = false;
+      } else {
+        nombre.style.border ="";
       }
 
       if (apellidos.value === "") {
-        toastr.error("No ha ingresado sus apellidos", "¡Aviso!");
+        //toastr.error("No ha ingresado sus apellidos", "¡Aviso!");
         apellidos.style.border ="2px solid red";
+        completo = false;
+      } else {
+        apellidos.style.border ="";
       }
 
       if (email.value === "") {
-        toastr.error("No ha ingresado su E-mail", "¡Aviso!");
+        //toastr.error("No ha ingresado su E-mail", "¡Aviso!");
         email.style.border ="2px solid red";
+        completo = false;
+      } else {
+        email.style.border ="";
       }
 
       if (telefono.value === "") {
-        toastr.error("No ha ingresado su teléfono", "¡Aviso!");
+        //toastr.error("No ha ingresado su teléfono", "¡Aviso!");
         telefono.style.border ="2px solid red";
+        completo = false;
+      } else {
+        telefono.style.border ="";
       }
 
+      if (completo == false) {
+        toastr.error("No ha ingresado toda su información personal", "¡Aviso!");
+      }
 
      if(document.getElementById("resumen").value === ""){
       toastr.error("No ha ingresado su resumen", "¡Aviso!");
