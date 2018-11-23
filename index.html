@@ -108,20 +108,69 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="section" id="workPlaces">
+  <div class="container">
+    <div class="card" data-aos="fade-up" data-aos-offset="10">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="card-body">
+            <div class="h4 mt-0 title">Compañias para las que he trabajado</div>
+            <div class="row">
+              <!-- Write your comments here -->
+              <div class="col-sm-4"><strong class="text-uppercase">Título del puesto:</strong></div>
+              <div class="col-sm-8"><input type="text" maxlength="30" placeholder = "Título del puesto aquí" id="titulo" required>
+              <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="nombre" placeholder = "algo" required>Click para añadir nombre</label> -->
+              <label type="label" id="lTitulo"></label></div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-4"><strong class="text-uppercase">Nombre de la compañía:</strong></div>
+                <div class="col-sm-8"><input type="text" maxlength="30" placeholder = "Nombre de la compañía aquí" id="nombreC" required>
+                <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="apellidos" required>Click para añadir apellidos</label> -->
+                <label type="label" id="lNombreC"></label></div>  
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-4"><strong> Descripción del trabajo que realizaba: </strong> </div>
+                <textarea rows="8" cols="50" maxlength="300" id="resumen" required></textarea> 
+                <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="email" required>Click para añadir E-mail</label> -->
+                <label type="label" id="lDescripcion"></label>  
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-4"><strong class="text-uppercase">Fecha de inicio:</strong></div>
+                <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "Fecha de inicio aquí" id="inicio" required>
+                <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
+                <label type="label" id="linicio"></label></div>  
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-4"><strong class="text-uppercase">Fecha de finalización:</strong></div>
+                <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "Fecha de inicio aquí" id="final" required>
+                <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
+                <label type="label" id="lFinal"></label></div>  
+            </div>
+            <div class="row mt-3">
+                <!--<input type='button' value='Agregar información' id='infoButton' />-->
+                <!--<button onclick="infoPersonal()" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor" id="bInfoPersonal">Vista previa</button>-->
+                <button type="submit" class="btn btn-primary" onclick="infoPersonal()"  id="bInfoPersonal">Añadir</button>
+              <!--<div class="col-sm-8"><input type="reset"></strong></div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
 <div class="section" id="skill">
   <div class="container">
     <div class="h4 text-center mb-4 title">Habilidades</div>
-    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-      <div class="card-body">
-        <div class="skills">
-      
+      <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="card-body">
+          <div class="skills">
+        
+          </div>
         </div>
       </div>
-      </div>
-      
-      
       <div class="form-horizontal">
         <div class="control-group">
           <label class="control-label"> Ingrese el nombre de la habilidad </label>
@@ -137,14 +186,10 @@
             <option value="Experto">Experto</option>
           </select>
         </div>
-      
         <br>
         <button type="submit" class="btn btn-primary" id="addButton" >Agregar habilidad</button>
-              
-      
-      
-      
       </div>
+  
       
       <div class="section" id="portfolio">
         <div class="container">
