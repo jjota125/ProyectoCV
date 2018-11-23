@@ -59,6 +59,7 @@ window.onload = function(){
 
 }
 
+// Guarda la información personal y de resumen ingresada y alerta sobre campos vacíos
 function infoPersonal() {
   var nombre = document.getElementById("nombre");
   var lNombre = document.getElementById("lNombre");
@@ -78,6 +79,7 @@ function infoPersonal() {
   lTelefono.innerHTML = document.getElementById("telefono").value;
   lResumen.innerHTML = document.getElementById("resumen").value;
 
+  // Cuando se presiona el botón con el texto "Editar". Se ocultan los espacios de input y se revelan los labels con el texto ingresado
   if (nombre.style.display === "none" && apellidos.style.display === "none" && email.style.display === "none" && telefono.style.display === "none" && resumen.style.display == "none") { 
       nombre.style.display = "block";
       apellidos.style.display = "block";
@@ -91,9 +93,10 @@ function infoPersonal() {
       lTelefono.style.display = "none";
       lResumen.style.display = "none";
 
+      //Cambio de texto a "Vista previa" en el botón
       bInfoPersonal.textContent = "Vista previa"
 
-            
+  // Cuando se presiona el botón con el texto "Vista previa". Se ocultan los labels y se revelan los espacios de input para editar la información          
   } else {
       nombre.style.display = "none";
       apellidos.style.display = "none";
@@ -107,14 +110,40 @@ function infoPersonal() {
       lTelefono.style.display = "block";
       lResumen.style.display = "block";
 
+      //Cambio de texto a "Editar" en el botón
       bInfoPersonal.textContent = "Editar"
+
+        nombre.style.border ="";
+        apellidos.style.border ="";
+        email.style.border ="";
+        telefono.style.border ="";
+        resumen.style.border ="";
       
-      if (document.getElementById("nombre").value === "" || document.getElementById("apellidos").value === "" || document.getElementById("email").value === "" || document.getElementById("telefono").value === "") {
-        toastr.error("No ha ingresado toda su información personal", "Aviso!");
-  
+      // Revisión de espacios de input vacíos  
+      if (nombre.value === "") {
+        toastr.error("No ha ingresado su nombre", "¡Aviso!");
+        nombre.style.border ="2px solid red";
       }
+
+      if (apellidos.value === "") {
+        toastr.error("No ha ingresado sus apellidos", "¡Aviso!");
+        apellidos.style.border ="2px solid red";
+      }
+
+      if (email.value === "") {
+        toastr.error("No ha ingresado su E-mail", "¡Aviso!");
+        email.style.border ="2px solid red";
+      }
+
+      if (telefono.value === "") {
+        toastr.error("No ha ingresado su teléfono", "¡Aviso!");
+        telefono.style.border ="2px solid red";
+      }
+
+
      if(document.getElementById("resumen").value === ""){
-      toastr.error("No ha ingresado su resumen", "Aviso!");
+      toastr.error("No ha ingresado su resumen", "¡Aviso!");
+      resumen.style.border ="2px solid red";
     }
   }
   
@@ -175,7 +204,7 @@ $(document).ready(function () {
 
     //validar campos
     if (nombreHabilidad === "") {
-      toastr.error("No ha ingresado el nombre de la habilidad", "Aviso!");
+      toastr.error("No ha ingresado el nombre de la habilidad", "¡Aviso!");
       document.getElementById('habilidad').style.border ="2px solid red";
 
     } else {
@@ -187,6 +216,7 @@ $(document).ready(function () {
       $('.skills').append('<div  class="control-group col-md-12 " id="control-group' + id + '" ><div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
     
       document.getElementById('habilidad').style.border ="";
+      document.getElementById('habilidad').value = "";
     
     
     }
