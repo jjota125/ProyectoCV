@@ -188,6 +188,13 @@ function addWork()
     document.getElementById("inicio").value = "";
     document.getElementById("final").value = "";
     document.getElementById("ubicacion").value = "";
+
+    titulo.style.border ="";
+    nombreC.style.border ="";
+    descirpcion.style.border ="";
+    inicio.style.border ="";
+    final.style.border ="";
+    ubicacion.style.border ="";
   }
   else
   {
