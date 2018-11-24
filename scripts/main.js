@@ -170,9 +170,11 @@ function infoPersonal() {
 
 
 
-//Agrega textbox dinámicamente al pulsar el botón add y elimina al usar el botón remove
+//Agrega textbox dinámicamente al pulsar el botón add 
 $(document).ready(function () {
 
+
+  //Parametros del mensaje de error
   toastr.options = {
     "closeButton": false,
     "debug": false,
@@ -192,8 +194,8 @@ $(document).ready(function () {
   }
 
 
-
-  $("#addButton").click(function () {
+  //Al clickear el botón de agregar habilidad
+  $("#agregarHabilidad").click(function () {
       //if( ($('.form-horizontal .control-group').length+1) > 2) { //Agregar un máximo
       //    alert("Only 2 control-group allowed");
       //    return false;
@@ -202,7 +204,7 @@ $(document).ready(function () {
       nombreHabilidad = document.getElementById("habilidad").value;
       selectedIndex = document.getElementById("nivelHabilidad").selectedIndex;
      
-     
+     //Valores de porcentaje asignados a cada nivel de habilidad
       if(selectedIndex === 0){
 
           nivelHabilidad = "Principiante";
@@ -222,12 +224,12 @@ $(document).ready(function () {
 
     //validar campos
     if (nombreHabilidad === "") {
-      toastr.error("No ha ingresado el nombre de la habilidad", "¡Aviso!");
+      toastr.error("No ha ingresado el nombre de la habilidad", "¡Aviso!"); //Mensaje de error si el campo nombre habilidad está vacío
       document.getElementById('habilidad').style.border ="2px solid red";
 
     } else {
 
-      //Agrega dinamicamente código en la pag
+      //Agrega dinamicamente código en la página
       var id = ($('.skills .control-group').length + 1).toString();
       //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
 
