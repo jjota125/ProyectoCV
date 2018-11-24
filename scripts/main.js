@@ -197,30 +197,54 @@ function addWork()
     {
         titulo.style.border ="2px solid red";
     }
+    else 
+    {
+      titulo.style.border ="";
+    }
 
     if (document.getElementById("nombreC").value == "")
     {
         nombreC.style.border ="2px solid red";
+    }
+    else 
+    {
+      nombreC.style.border ="";
     }
 
     if (document.getElementById("descirpcion").value == "")
     {
         descirpcion.style.border ="2px solid red";
     }
+    else 
+    {
+      descirpcion.style.border ="";
+    }
 
     if (document.getElementById("inicio").value == "")
     {
         inicio.style.border ="2px solid red";
+    }
+    else 
+    {
+      inicio.style.border ="";
     }
 
     if (document.getElementById("final").value == "")
     {
         final.style.border ="2px solid red";
     }
+    else 
+    {
+      final.style.border ="";
+    }
 
     if (document.getElementById("ubicacion").value == "")
     {
         ubicacion.style.border ="2px solid red";
+    }
+    else 
+    {
+      ubicacion.style.border ="";
     }
   }
 }
