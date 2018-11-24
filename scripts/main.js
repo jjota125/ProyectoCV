@@ -168,8 +168,29 @@ function infoPersonal() {
   
 }
 
+function addWork()
+{
+  //if(validadores)
+  //{
+    var cTitulo = document.getElementById("titulo").value;
+    var cNombre = document.getElementById("nombreC").value;
+    var cDescirpcion = document.getElementById("descirpcion").value;
+    var cInicio = document.getElementById("inicio").value;
+    var cFinal = document.getElementById("final").value;
+    var cUbicacion = document.getElementById("ubicacion").value;
+    
 
+    $('.works').append('<div class="container cc-experience"> <div class="row"> <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p> '+ cInicio +' - '+ cFinal +' </p> <div class="h5">'+cNombre+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5">'+ cTitulo +'</div> <p> '+ cDescirpcion +' <br> Ubicación: '+ cUbicacion +' </p> </div> </div> </div> </div> <br>');
 
+    document.getElementById("titulo").value = "";
+    document.getElementById("nombreC").value = "";
+    document.getElementById("descirpcion").value = "";
+    document.getElementById("inicio").value = "";
+    document.getElementById("final").value = "";
+    document.getElementById("ubicacion").value = "";
+  //}
+
+}
 
 //Agrega textbox dinámicamente al pulsar el botón add 
 $(document).ready(function () {
