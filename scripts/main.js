@@ -54,6 +54,7 @@ var nivelHabilidad;
 var porcentajeHabilidad;
 var selectedIndex;
 var completo;
+var nombreCentroEducativo;
 
 //Cuando ya la pag esté cargada entonces sigue
 window.onload = function(){
@@ -167,16 +168,7 @@ function infoPersonal() {
   
 }
 
-function addWork()
-{
-  var cTitulo = document.getElementById("titulo").value;
-  var cNombre = document.getElementById("nombreC").value;
-  var cDescirpcion = document.getElementById("descirpcion").value;
-  var cInicio = document.getElementById("inicio").value;
-  var cFinal = document.getElementById("final").value;
 
-  $('.works').append('<div class="row"> <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p> '+ cInicio +' - '+ cFinal +' </p> <div class="h5">'+cNombre+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5">'+ cTitulo +'</div> <p> '+ cDescirpcion +' </p> </div> </div> </div> <br>');
-}
 
 
 //Agrega textbox dinámicamente al pulsar el botón add 
@@ -203,55 +195,62 @@ $(document).ready(function () {
   }
 
 
-  //Al clickear el botón de agregar habilidad
-  $("#agregarHabilidad").click(function () {
-      //if( ($('.form-horizontal .control-group').length+1) > 2) { //Agregar un máximo
-      //    alert("Only 2 control-group allowed");
-      //    return false;
-      //}
-      
-      nombreHabilidad = document.getElementById("habilidad").value;
-      selectedIndex = document.getElementById("nivelHabilidad").selectedIndex;
-     
-     //Valores de porcentaje asignados a cada nivel de habilidad
-      if(selectedIndex === 0){
+        //Al clickear el botón de agregar habilidad
+        $("#agregarHabilidad").click(function () {
+            //if( ($('.form-horizontal .control-group').length+1) > 2) { //Agregar un máximo
+            //    alert("Only 2 control-group allowed");
+            //    return false;
+            //}
+            
+            nombreHabilidad = document.getElementById("habilidad").value;
+            selectedIndex = document.getElementById("nivelHabilidad").selectedIndex;
+          
+          //Valores de porcentaje asignados a cada nivel de habilidad
+            if(selectedIndex === 0){
 
-          nivelHabilidad = "Principiante";
-          porcentajeHabilidad = 30;
+                nivelHabilidad = "Principiante";
+                porcentajeHabilidad = 30;
 
-      }else if( selectedIndex === 1){
+            }else if( selectedIndex === 1){
 
-      nivelHabilidad = "Intermedio";
-      porcentajeHabilidad = 60;
+            nivelHabilidad = "Intermedio";
+            porcentajeHabilidad = 60;
 
-    } else if (selectedIndex === 2) {
+          } else if (selectedIndex === 2) {
 
-      nivelHabilidad = "Experto";
-      porcentajeHabilidad = 90;
-    }
+            nivelHabilidad = "Experto";
+            porcentajeHabilidad = 90;
+          }
 
 
-    //validar campos
-    if (nombreHabilidad === "") {
-      toastr.error("No ha ingresado el nombre de la habilidad", "¡Aviso!"); //Mensaje de error si el campo nombre habilidad está vacío
-      document.getElementById('habilidad').style.border ="2px solid red";
+          //validar campos
+          if (nombreHabilidad === "") {
+            toastr.error("No ha ingresado el nombre de la habilidad", "¡Aviso!"); //Mensaje de error si el campo nombre habilidad está vacío
+            document.getElementById('habilidad').style.border ="2px solid red";
 
-    } else {
+          } else {
 
-      //Agrega dinamicamente código en la página
-      var id = ($('.skills .control-group').length + 1).toString();
-      //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
+            //Agrega dinamicamente código en la página
+            var id = ($('.skills .control-group').length + 1).toString();
+            //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
 
-      $('.skills').append('<div  class="control-group col-md-12 " id="control-group' + id + '" ><div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
-    
-      document.getElementById('habilidad').style.border ="";
-      document.getElementById('habilidad').value = "";
-    
-    
-    }
+            $('.skills').append('<div  class="control-group col-md-12 " id="control-group' + id + '" ><div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
+          
+            document.getElementById('habilidad').style.border ="";
+            document.getElementById('habilidad').value = "";
+          
+          
+          }
 
-  });
+        });
 
-  
+
+        $("#agregarCentroEducativo").click(function () {
+
+          nombreHabilidad = document.getElementById("habilidad").value;
+
+
+
+        });
 });
 
