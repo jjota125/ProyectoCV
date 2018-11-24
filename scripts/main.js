@@ -170,8 +170,8 @@ function infoPersonal() {
 
 function addWork()
 {
-  //if(validadores)
-  //{
+  if (!((document.getElementById("titulo").value == "") || (document.getElementById("nombreC").value == "") || (document.getElementById("descirpcion").value == "") || (document.getElementById("inicio").value == "") || (document.getElementById("final").value == "") || (document.getElementById("ubicacion").value == "") ))
+  {
     var cTitulo = document.getElementById("titulo").value;
     var cNombre = document.getElementById("nombreC").value;
     var cDescirpcion = document.getElementById("descirpcion").value;
@@ -188,8 +188,11 @@ function addWork()
     document.getElementById("inicio").value = "";
     document.getElementById("final").value = "";
     document.getElementById("ubicacion").value = "";
-  //}
-
+  }
+  else
+  {
+    toastr.error("Faltan Campos por Rellenar !!", "¡Aviso!");
+  }
 }
 
 //Agrega textbox dinámicamente al pulsar el botón add 
