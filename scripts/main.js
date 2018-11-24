@@ -191,7 +191,37 @@ function addWork()
   }
   else
   {
-    toastr.error("Faltan Campos por Rellenar !!", "¡Aviso!");
+    toastr.error("No ha ingresado toda su información laboral", "¡Aviso!");
+
+    if (document.getElementById("titulo").value == "")
+    {
+        titulo.style.border ="2px solid red";
+    }
+
+    if (document.getElementById("nombreC").value == "")
+    {
+        nombreC.style.border ="2px solid red";
+    }
+
+    if (document.getElementById("descirpcion").value == "")
+    {
+        descirpcion.style.border ="2px solid red";
+    }
+
+    if (document.getElementById("inicio").value == "")
+    {
+        inicio.style.border ="2px solid red";
+    }
+
+    if (document.getElementById("final").value == "")
+    {
+        final.style.border ="2px solid red";
+    }
+
+    if (document.getElementById("ubicacion").value == "")
+    {
+        ubicacion.style.border ="2px solid red";
+    }
   }
 }
 
