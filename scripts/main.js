@@ -53,7 +53,8 @@ var nombreHabilidad;
 var nivelHabilidad;
 var porcentajeHabilidad;
 var selectedIndex;
-var completo;
+var infoPersonalCompleta = true;
+var editandoInfoPersonal = true;
 var nombreCentroEducativo;
 
 //Cuando ya la pag esté cargada entonces sigue
@@ -74,7 +75,56 @@ function infoPersonal() {
   var resumen = document.getElementById("resumen");
   var lResumen = document.getElementById("lResumen");
   var bInfoPersonal = document.getElementById("bInfoPersonal");
-  completo = true;
+  infoPersonalCompleta = true;
+  
+
+
+  // Revisión de espacios de input vacíos  
+  if (nombre.value === "") {
+    nombre.style.border ="2px solid red";
+    infoPersonalCompleta = false;
+  } else {
+    nombre.style.border ="";
+  }
+
+  if (apellidos.value === "") {
+    apellidos.style.border ="2px solid red";
+    infoPersonalCompleta = false;
+  } else {
+    apellidos.style.border ="";
+  }
+
+  if (email.value === "") {
+    email.style.border ="2px solid red";
+    infoPersonalCompleta = false;
+  } else {
+    email.style.border ="";
+  }
+
+  if (telefono.value === "") {
+    telefono.style.border ="2px solid red";
+    infoPersonalCompleta = false;
+  } else {
+    telefono.style.border ="";
+  }
+
+  if (infoPersonalCompleta == false) {
+    toastr.error("No ha ingresado toda su información personal", "¡Aviso!");
+  }
+
+  //Si el usuario no ha ingresado el resumen, se le muestra una alerta para que llene el espacio
+  if(resumen.value === ""){
+    toastr.error("No ha ingresado su resumen", "¡Aviso!");
+    resumen.style.border ="2px solid red";
+    infoPersonalCompleta = false;
+  } else {
+    resumen.style.border = "";
+  }
+
+ 
+
+// Cuando se presiona "Vista previa"
+if (infoPersonalCompleta == true && editandoInfoPersonal == false){
 
   lNombre.innerHTML = document.getElementById("nombre").value;
   lApellidos.innerHTML = document.getElementById("apellidos").value;
@@ -82,8 +132,30 @@ function infoPersonal() {
   lTelefono.innerHTML = document.getElementById("telefono").value;
   lResumen.innerHTML = document.getElementById("resumen").value;
 
-  // Cuando se presiona el botón con el texto "Editar". Se ocultan los labels y se revelan los espacios de input para editar la información
-  if (nombre.style.display === "none" && apellidos.style.display === "none" && email.style.display === "none" && telefono.style.display === "none" && resumen.style.display == "none") { 
+  nombre.style.display = "none";
+  apellidos.style.display = "none";
+  email.style.display = "none";
+  telefono.style.display = "none";
+  resumen.style.display = "none";
+
+  lNombre.style.display = "block";
+  lApellidos.style.display = "block";
+  lEMail.style.display = "block";
+  lTelefono.style.display = "block";
+  lResumen.style.display = "block";
+
+  //Cambio de texto a "Editar" en el botón
+  bInfoPersonal.textContent = "Editar"
+
+    nombre.style.border ="";
+    apellidos.style.border ="";
+    email.style.border ="";
+    telefono.style.border ="";
+    resumen.style.border ="";
+    editandoInfoPersonal = true;
+  } else {
+      // Cuando se presiona el botón con el texto "Editar". Se ocultan los labels y se revelan los espacios de input para editar la información
+    if (editandoInfoPersonal == true) { 
       nombre.style.display = "block";
       apellidos.style.display = "block";
       email.style.display = "block";
@@ -98,73 +170,12 @@ function infoPersonal() {
 
       //Cambio de texto a "Vista previa" en el botón
       bInfoPersonal.textContent = "Vista previa"
+      editandoInfoPersonal = false;
 
-  // Cuando se presiona el botón con el texto "Vista previa". Se ocultan los espacios de input y se revelan los labels con el texto ingresado          
-  } else {
-      nombre.style.display = "none";
-      apellidos.style.display = "none";
-      email.style.display = "none";
-      telefono.style.display = "none";
-      resumen.style.display = "none";
-    
-      lNombre.style.display = "block";
-      lApellidos.style.display = "block";
-      lEMail.style.display = "block";
-      lTelefono.style.display = "block";
-      lResumen.style.display = "block";
-
-      //Cambio de texto a "Editar" en el botón
-      bInfoPersonal.textContent = "Editar"
-
-        nombre.style.border ="";
-        apellidos.style.border ="";
-        email.style.border ="";
-        telefono.style.border ="";
-        resumen.style.border ="";
-      
-      // Revisión de espacios de input vacíos  
-      if (nombre.value === "") {
-        //toastr.error("No ha ingresado su nombre", "¡Aviso!");
-        nombre.style.border ="2px solid red";
-        completo = false;
-      } else {
-        nombre.style.border ="";
-      }
-
-      if (apellidos.value === "") {
-        //toastr.error("No ha ingresado sus apellidos", "¡Aviso!");
-        apellidos.style.border ="2px solid red";
-        completo = false;
-      } else {
-        apellidos.style.border ="";
-      }
-
-      if (email.value === "") {
-        //toastr.error("No ha ingresado su E-mail", "¡Aviso!");
-        email.style.border ="2px solid red";
-        completo = false;
-      } else {
-        email.style.border ="";
-      }
-
-      if (telefono.value === "") {
-        //toastr.error("No ha ingresado su teléfono", "¡Aviso!");
-        telefono.style.border ="2px solid red";
-        completo = false;
-      } else {
-        telefono.style.border ="";
-      }
-
-      if (completo == false) {
-        toastr.error("No ha ingresado toda su información personal", "¡Aviso!");
-      }
-
-      //Si el usuario no ha ingresado el resumen, se le muestra una alerta para que llene el espacio
-     if(document.getElementById("resumen").value === ""){
-      toastr.error("No ha ingresado su resumen", "¡Aviso!");
-      resumen.style.border ="2px solid red";
     }
+
   }
+
   
 }
 
