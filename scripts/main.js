@@ -418,3 +418,64 @@ $(document).ready(function () {
         });
 });
 
+
+var clickColor = 0;
+
+//Cambia el color de las secciones
+function cambiarColorFondo(){
+
+ // var myElements = document.querySelectorAll(".section");
+ 
+ // for (var i = 0; i < myElements.length; i++) {
+ //     myElements[i].style.background = rgb(0, 0, 0);
+  //}
+
+  if(clickColor == 0){
+
+  var secEducacion = document.getElementById('seccionEducacion');
+  secEducacion.style.backgroundColor = "#3485b5";
+
+  var secHabilidades = document.getElementById('seccionHabilidades');
+  secHabilidades.style.backgroundColor = "#3485b5";
+
+  var secWorkPlaces = document.getElementById('workPlaces');
+  secWorkPlaces.style.backgroundColor = "#3485b5";
+
+  var secAbout = document.getElementById('about');
+  secAbout.style.backgroundColor = "#3485b5";
+
+  
+  }else if(clickColor == 1){
+
+    var secEducacion = document.getElementById('seccionEducacion');
+    secEducacion.style.backgroundColor = "#34b574";
+  
+    var secHabilidades = document.getElementById('seccionHabilidades');
+    secHabilidades.style.backgroundColor = "#34b574";
+  
+    var secWorkPlaces = document.getElementById('workPlaces');
+    secWorkPlaces.style.backgroundColor = "#34b574";
+  
+    var secAbout = document.getElementById('about');
+    secAbout.style.backgroundColor = "#34b574";
+
+  }else {
+
+    var secEducacion = document.getElementById('seccionEducacion');
+    secEducacion.style.backgroundColor = "#FFFFFF";
+  
+    var secHabilidades = document.getElementById('seccionHabilidades');
+    secHabilidades.style.backgroundColor = "#FFFFFF";
+  
+    var secWorkPlaces = document.getElementById('workPlaces');
+    secWorkPlaces.style.backgroundColor = "#FFFFFF";
+  
+    var secAbout = document.getElementById('about');
+    secAbout.style.backgroundColor = "#FFFFFF";
+    
+    clickColor=-1;
+  }
+
+  clickColor++;
+
+}

@@ -24,6 +24,21 @@
  * Copyright 2012-2013 Mattia Larentis
  * http://www.apache.org/licenses/LICENSE-2.0
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .bootstrap-switch {
   display: inline-block;
   direction: ltr;
@@ -5112,7 +5127,7 @@ Created using IcoMoon - icomoon.io
 .section {
   padding: 70px 0;
   position: relative;
-  background: #FFFFFF;
+  background: rgb(255, 255, 255);
 }
 
 .section .row + .category {
@@ -7283,3 +7298,120 @@ a.credit {
   opacity: 1 !important;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+.float2{
+	position:fixed;
+	width:100px;
+	height:60px;
+	bottom:40px;
+	right:120px;
+	background-color:rgb(29, 6, 235);
+	color:rgb(255, 255, 255);
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	z-index:1000;
+	animation: bot-to-top 2s ease-out;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#F33;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	z-index:1000;
+	animation: bot-to-top 2s ease-out;
+}
+
+
+
+.flotante ul{
+	position:fixed;
+	right:40px;
+	padding-bottom:20px;
+	bottom:80px;
+	z-index:100;
+}
+
+.flotante ul li{
+	list-style:none;
+	margin-bottom:10px;
+}
+
+.flotante ul li a{
+	background-color:#F33;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	width:60px;
+	height:60px;
+	display:block;
+}
+
+
+.flotante ul:hover{
+	visibility:visible!important;
+	opacity:1!important;
+}
+
+
+.my-float{
+	font-size:24px;
+	margin-top:18px;
+}
+
+a#menu-share + ul{
+  visibility: hidden;
+}
+
+a#menu-share:hover + ul{
+  visibility: visible;
+  animation: scale-in 0.5s;
+}
+
+a#menu-share i{
+	animation: rotate-in 0.5s;
+}
+
+a#menu-share:hover > i{
+	animation: rotate-out 0.5s;
+}
+
+
+
+
+@keyframes bot-to-top {
+  0%   {bottom:-40px}
+  50%  {bottom:40px}
+}
+
+
+
+@keyframes rotate-in {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+@keyframes rotate-out {
+  from {transform: rotate(360deg);}
+  to {transform: rotate(0deg);}
+}
