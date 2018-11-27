@@ -267,6 +267,10 @@ function addWork()
   }
 }
 
+
+  var contadorSkills = 0;
+
+
 //Agrega textbox dinámicamente al pulsar el botón add 
 $(document).ready(function () {
 
@@ -277,7 +281,7 @@ $(document).ready(function () {
     "debug": false,
     "newestOnTop": false,
     "progressBar": true,
-    "positionClass": "toast-top-full-width",
+    "positionClass": "toast-top-center",
     "preventDuplicates": false,
     "onclick": null,
     "showDuration": "300",
@@ -293,11 +297,7 @@ $(document).ready(function () {
 
         //Al clickear el botón de agregar habilidad
         $("#agregarHabilidad").click(function () {
-            //if( ($('.form-horizontal .control-group').length+1) > 2) { //Agregar un máximo
-            //    alert("Only 2 control-group allowed");
-            //    return false;
-            //}
-            
+           
             nombreHabilidad = document.getElementById("habilidad").value;
             selectedIndex = document.getElementById("nivelHabilidad").selectedIndex;
           
@@ -315,30 +315,38 @@ $(document).ready(function () {
           } else if (selectedIndex === 2) {
 
             nivelHabilidad = "Experto";
-            porcentajeHabilidad = 90;
-          }
+      porcentajeHabilidad = 90;
+    }
 
 
-          //validar campos
-          if (nombreHabilidad === "") {
-            toastr.error("No ha ingresado el nombre de la habilidad", "¡Aviso!"); //Mensaje de error si el campo nombre habilidad está vacío
-            document.getElementById('habilidad').style.border ="2px solid red";
+    //validar campos
+    if (nombreHabilidad === "") {
+      toastr.error("No ha ingresado el nombre de la habilidad", "¡Aviso!"); //Mensaje de error si el campo nombre habilidad está vacío
+      document.getElementById('habilidad').style.border = "2px solid red";
 
-          } else {
+    } else {
 
-            //Agrega dinamicamente código en la página
-            var id = ($('.skills .control-group').length + 1).toString();
-            //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
+      //Agrega dinamicamente código en la página
+      var id = ($('.skills .control-group').length + 1).toString();
 
-            $('.skills').append('<div  class="control-group col-md-12 " id="control-group' + id + '" ><div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
-          
-            document.getElementById('habilidad').style.border ="";
-            document.getElementById('habilidad').value = "";
-          
-          
-          }
+      if (id <= 6) { //Agregar un máximo
+        
+        
+        //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
+      
+          $('.skills .row').append(' <div  class="control-group col-md-6 " id="control-group' + id + '" >   <div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
+       
+        document.getElementById('habilidad').style.border = "";
+        document.getElementById('habilidad').value = "";
 
-        });
+      }else{
+
+        toastr.error("Solo se permite ingresar 6 habilidades", "¡Aviso!"); //Mensaje de error si el campo nombre habilidad está vacío
+      }
+
+    }
+
+  });
 
 
         $("#agregarCentroEducativo").click(function () {
