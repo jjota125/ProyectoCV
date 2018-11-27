@@ -56,6 +56,9 @@ var selectedIndex;
 var infoPersonalCompleta = true;
 var editandoInfoPersonal = true;
 var nombreCentroEducativo;
+var ubicacionCentroEducativo;
+var tituloCentroEducativo;
+var fechasCentroEducativo;
 
 //Cuando ya la pag esté cargada entonces sigue
 window.onload = function(){
@@ -277,7 +280,7 @@ $(document).ready(function () {
 
   //Parametros del mensaje de error
   toastr.options = {
-    "closeButton": false,
+    "closeButton": true,
     "debug": false,
     "newestOnTop": false,
     "progressBar": true,
@@ -349,10 +352,67 @@ $(document).ready(function () {
   });
 
 
+   //-----------------------------------------------------------------------Centros Educativos-----------------------------------------------------------------------------------------
+
         $("#agregarCentroEducativo").click(function () {
 
-          nombreHabilidad = document.getElementById("habilidad").value;
+          nombreCentroEducativo = document.getElementById("nombreCentroEducativo").value;
+          ubicacionCentroEducativo = document.getElementById("ubicacionCentroEducativo").value;
+          tituloCentroEducativo = document.getElementById("tituloCentroEducativo").value;
+          fechasCentroEducativo = document.getElementById("fechasCentroEducativo").value;
 
+
+    var validados = true;
+          //validar campos
+    if (nombreCentroEducativo === "") {
+      toastr.error("No ha ingresado el nombre del Centro Educativo", "¡Aviso!"); //Mensaje de error si el campo nombre Centro Educativo está vacío
+      document.getElementById('nombreCentroEducativo').style.border = "2px solid red";
+      validados = false;
+    } 
+    
+    if (ubicacionCentroEducativo === "") {
+      toastr.error("No ha ingresado la ubicación del Centro Educativo", "¡Aviso!"); //Mensaje de error si el campo ubicacion Centro Educativo está vacío
+      document.getElementById('ubicacionCentroEducativo').style.border = "2px solid red";
+      validados = false;
+    } 
+    
+    if (tituloCentroEducativo === "") {
+      toastr.error("No ha ingresado el título del Centro Educativo", "¡Aviso!"); //Mensaje de error si el campo titulo Centro Educativo está vacío
+      document.getElementById('tituloCentroEducativo').style.border = "2px solid red";
+      validados = false;
+    }
+  
+    if (fechasCentroEducativo === "") {
+      toastr.error("No ha ingresado las fechas del Centro Educativo", "¡Aviso!"); //Mensaje de error si el campo fechas Centro Educativo está vacío
+      document.getElementById('fechasCentroEducativo').style.border = "2px solid red";
+      validados = false;
+    } 
+    
+    if(validados === true) {
+
+      //Agrega dinamicamente código en la página
+      var id = ($('.centrosEducativos .control-group').length + 1).toString();
+
+      if (id <= 6) { //Agregar un máximo
+        
+        
+        //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
+      
+          $('.centrosEducativos ').append(' <div class="card"> <div class="row">  <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"><div class="card-body cc-education-header"><p class="h5">' + fechasCentroEducativo +'</p><br><div class="h5">' + ubicacionCentroEducativo + '</div></div></div><div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"><div class="card-body"><div class="h2">' + tituloCentroEducativo + '</div><h3 align="center"> ' + nombreCentroEducativo + '</h3></div></div></div></div>');
+       
+        document.getElementById('nombreCentroEducativo').style.border = "";
+        document.getElementById('ubicacionCentroEducativo').style.border = "";
+        document.getElementById('tituloCentroEducativo').style.border = "";
+        document.getElementById('fechasCentroEducativo').style.border = "";
+        
+        //document.getElementById('nombreCentroEducativo').value = "";
+
+      }else{
+
+        toastr.error("Solo se permite ingresar 6 Centros Educativos", "¡Aviso!"); //Mensaje de error si el campo nombre habilidad está vacío
+      }
+
+    }
 
 
         });

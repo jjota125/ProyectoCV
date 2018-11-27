@@ -14,9 +14,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" ></link>
-
+   
+        
   </head>
-  <body id="top">
+  <body class=" " id="top" >
+     
     <header>
       <div class="profile-page sidebar-collapse">
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
@@ -38,7 +40,7 @@
         </nav>
       </div>
     </header>
-    <div class="page-content">
+    <div class="page-content" >
       <div>
 <div class="profile-page">
   <div class="wrapper">
@@ -215,6 +217,66 @@
     </div>
   </div>
 
+
+  
+<div class="section">
+    <div class="container cc-education">
+      <div class="h4 text-center mb-4 title">Educación</div>
+      <div class="card">
+        <div class="row">
+          <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body cc-education-header">
+              <p class="h5">2013 - 2015</p>
+              <br>
+              <div class="h5">Master's Degree</div>
+            </div>
+          </div>
+          <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+            <div class="card-body">
+              <div class="h2">Master of Information Technology</div>
+              <h3 align="center">University of Computer Science</h3>
+             <!-- <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="centrosEducativos">
+         
+              <!-- Acá se genera el html de cada centro educactivo con javascript al usar el agregarCentroEducativo -->
+           
+        </div>
+
+       
+
+      <div class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label"> Ingrese el nombre del centro educativo </label>
+            <div class="controls">
+              <input type="text" placeholder="Centro Educativo" size="40" id="nombreCentroEducativo" value="Universidad de Costa Rica" required />
+            </div>
+            <br>
+            <label class="control-label"> Ingrese la ubicación del centro educativo</label>
+            <div class="controls">
+              <input type="text" placeholder="Ubicación del Centro Educativo" size="40" id="ubicacionCentroEducativo" value="San Pedro de Montes de Oca"  required />
+            </div>
+            <br>
+            <label class="control-label"> Ingrese el título obtenido </label>
+            <div class="controls">
+              <input type="text" placeholder="Título obtenido" size="40" id="tituloCentroEducativo" value="Doctorado en Ciencias de la Computación" required />
+            </div>
+            <br>
+            <label class="control-label"> Ingrese el año de inicio y de finalización </label>
+            <div class="controls">
+              <input type="text" placeholder="  2001 - 2002,  2001 - Presente" size="30" id="fechasCentroEducativo" value="2001-2005" required />
+            </div>
+            <br>
+           
+            <button type="submit" class="btn btn-primary" id="agregarCentroEducativo" >Agregar Centro Educativo</button>
+          </div>
+        </div>
+  </div>
+</div>
       
      
 
@@ -275,29 +337,6 @@
 
 
 
-<div class="section">
-  <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Education</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2013 - 2015</p>
-            <div class="h5">Master's Degree</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Master of Information Technology</div>
-            <p class="category">University of Computer Science</p>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-</div>
 
 
 
@@ -589,6 +628,7 @@
 
  
     </div>
+
     <footer class="footer">
       <!--
       <div class="container text-center"><a class="cc-facebook btn btn-link" href="#"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="#"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" href="#"><i class="fa fa-instagram fa-2x " aria-hidden="true"></i></a></div>
