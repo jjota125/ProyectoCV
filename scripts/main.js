@@ -462,62 +462,81 @@ $(document).ready(function () {
 
 
 
-        $("#agregarReferencia").click(function () {
-
-          nombreCentroEducativo2 = document.getElementById("nombreCentroEducativo2").value;
-          ubicacionCentroEducativo2 = document.getElementById("ubicacionCentroEducativo2").value;
-          tituloCentroEducativo2 = document.getElementById("tituloCentroEducativo2").value;
-          fechasCentroEducativo2 = document.getElementById("fechasCentroEducativo2").value;
-
+    $("#agregarReferencia").click(function () {
+          
+    nombreRef = document.getElementById("nombreRef").value;
+    apellidosRef = document.getElementById("apellidosRef").value;
+    profesionRef = document.getElementById("profesionRef").value;
+    empresaRef = document.getElementById("empresaRef").value;
+    telefonoRef = document.getElementById("telefonoRef").value;
+    eMailRef = document.getElementById("eMailRef").value;
 
     var validados = true;
           //validar campos
-    if (nombreCentroEducativo2 === "") {
-      toastr.info("No ha ingresado el nombre del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre Centro Educativo está vacío
-      document.getElementById('nombreCentroEducativo2').style.border = "2px solid red";
+    if (nombreRef === "") {
+      toastr.info("No ha ingresado el nombre de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre Centro Educativo está vacío
+      document.getElementById('nombreRef').style.border = "2px solid red";
       validados = false;
     } 
     
-    if (ubicacionCentroEducativo2 === "") {
-      toastr.info("No ha ingresado la ubicación del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo ubicacion Centro Educativo está vacío
-      document.getElementById('ubicacionCentroEducativo2').style.border = "2px solid red";
+    if (apellidosRef === "") {
+      toastr.info("No ha ingresado los apellidos de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo ubicacion Centro Educativo está vacío
+      document.getElementById('apellidosRef').style.border = "2px solid red";
       validados = false;
     } 
     
-    if (tituloCentroEducativo2 === "") {
-      toastr.info("No ha ingresado el título del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo titulo Centro Educativo está vacío
-      document.getElementById('tituloCentroEducativo2').style.border = "2px solid red";
+    if (profesionRef === "") {
+      toastr.info("No ha ingresado la profesión de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo titulo Centro Educativo está vacío
+      document.getElementById('profesionRef').style.border = "2px solid red";
       validados = false;
     }
   
-    if (fechasCentroEducativo2 === "") {
-      toastr.info("No ha ingresado las fechas del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
-      document.getElementById('fechasCentroEducativo2').style.border = "2px solid red";
+    if (empresaRef === "") {
+      toastr.info("No ha ingresado la empresa donde labora la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
+      document.getElementById('empresaRef').style.border = "2px solid red";
+      validados = false;
+    } 
+
+    if (telefonoRef === "") {
+      toastr.info("No ha ingresado el telefono de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
+      document.getElementById('telefonoRef').style.border = "2px solid red";
+      validados = false;
+    } 
+
+    if (eMailRef === "") {
+      toastr.info("No ha ingresado el e-mail de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
+      document.getElementById('eMailRef').style.border = "2px solid red";
       validados = false;
     } 
     
     if(validados === true) {
 
       //Agrega dinamicamente código en la página
-      var id = ($('.centrosEducativos .control-group').length + 1).toString();
+      var id = ($('.referencias .control-group').length + 1).toString();
 
-      if (id <= 6) { //Agregar un máximo
+      if (id <= 3) { //Agregar un máximo
         
         
         //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
       
-          $('.centrosEducativos ').append(' <div class="card"> <div class="row">  <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"><div class="card-body cc-education-header"><p class="h5">' + fechasCentroEducativo2 +'</p><br><div class="h5">' + ubicacionCentroEducativo2 + '</div></div></div><div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"><div class="card-body"><div class="h2">' + tituloCentroEducativo2 + '</div><h3 align="center"> ' + nombreCentroEducativo2 + '</h3></div></div></div></div>');
+         // $('.centrosEducativos ').append(' <div class="card"> <div class="row">  <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"><div class="card-body cc-education-header"><p class="h5">' + fechasCentroEducativo2 +'</p><br><div class="h5">' + ubicacionCentroEducativo2 + '</div></div></div><div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"><div class="card-body"><div class="h2">' + tituloCentroEducativo2 + '</div><h3 align="center"> ' + nombreCentroEducativo2 + '</h3></div></div></div></div>');
        
-        document.getElementById('nombreCentroEducativo2').style.border = "";
-        document.getElementById('ubicacionCentroEducativo2').style.border = "";
-        document.getElementById('tituloCentroEducativo2').style.border = "";
-        document.getElementById('fechasCentroEducativo2').style.border = "";
+
+         
+         $('.referencias ').append( '<div class="section" id="reference"><div class="container cc-reference"><div class="h4 mb-4 text-center title"></div><div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"><li class="active" data-target="#cc-Indicators" data-slide-to="0"></li><li data-target="#cc-Indicators" data-slide-to="1"></li><li data-target="#cc-Indicators" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco </p></div></div></div></div></div></div></div></div></div>' );
+
+        document.getElementById('nombreRef').style.border = "";
+        document.getElementById('apellidosRef').style.border = "";
+        document.getElementById('profesionRef').style.border = "";
+        document.getElementById('empresaRef').style.border = "";
+        document.getElementById('telefonoRef').style.border = "";
+        document.getElementById('eMailRef').style.border = "";
         
         //document.getElementById('nombreCentroEducativo').value = "";
 
       }else{
 
-        toastr.info("Solo se permite ingresar 6 Centros Educativos"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre habilidad está vacío
+        toastr.info("Solo se permite ingresar 3 referencias"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre habilidad está vacío
       }
 
     }
@@ -552,6 +571,9 @@ function cambiarColorFondo(){
   var secAbout = document.getElementById('about');
   secAbout.style.backgroundColor = "#3485b5";
 
+  var secReference = document.getElementById('reference');
+  secReference.style.backgroundColor = "#3485b5";
+
   
   }else if(clickColor == 1){
 
@@ -567,6 +589,9 @@ function cambiarColorFondo(){
     var secAbout = document.getElementById('about');
     secAbout.style.backgroundColor = "#34b574";
 
+    var secReference = document.getElementById('reference');
+    secReference.style.backgroundColor = "#34b574";
+
   }else {
 
     var secEducacion = document.getElementById('seccionEducacion');
@@ -580,6 +605,9 @@ function cambiarColorFondo(){
   
     var secAbout = document.getElementById('about');
     secAbout.style.backgroundColor = "#FFFFFF";
+
+    var secReference = document.getElementById('reference');
+    secReference.style.backgroundColor = "#FFFFFF";
     
     clickColor=-1;
   }
