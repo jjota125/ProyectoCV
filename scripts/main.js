@@ -475,39 +475,51 @@ $(document).ready(function () {
     var validados = true;
           //validar campos
     if (nombreRef === "") {
-      toastr.info("No ha ingresado el nombre de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre Centro Educativo está vacío
+      //toastr.info("No ha ingresado el nombre de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre Centro Educativo está vacío
       document.getElementById('nombreRef').style.border = "2px solid red";
       validados = false;
-    } 
+    } else {
+      document.getElementById('nombreRef').style.border = "";
+    }
     
     if (apellidosRef === "") {
-      toastr.info("No ha ingresado los apellidos de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo ubicacion Centro Educativo está vacío
+      //toastr.info("No ha ingresado los apellidos de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo ubicacion Centro Educativo está vacío
       document.getElementById('apellidosRef').style.border = "2px solid red";
       validados = false;
+    } else {
+      document.getElementById('apellidosRef').style.border = "";
     } 
     
     if (profesionRef === "") {
-      toastr.info("No ha ingresado la profesión de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo titulo Centro Educativo está vacío
+      //toastr.info("No ha ingresado la profesión de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo titulo Centro Educativo está vacío
       document.getElementById('profesionRef').style.border = "2px solid red";
       validados = false;
+    } else {
+      document.getElementById('profesionRef').style.border = "";
     }
   
     if (empresaRef === "") {
-      toastr.info("No ha ingresado la empresa donde labora la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
+      //toastr.info("No ha ingresado la empresa donde labora la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
       document.getElementById('empresaRef').style.border = "2px solid red";
       validados = false;
+    } else {
+      document.getElementById('empresaRef').style.border = "";
     } 
 
     if (telefonoRef === "") {
-      toastr.info("No ha ingresado el telefono de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
+      //toastr.info("No ha ingresado el telefono de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
       document.getElementById('telefonoRef').style.border = "2px solid red";
       validados = false;
+    } else {
+      document.getElementById('telefonoRef').style.border = "";
     } 
 
     if (eMailRef === "") {
-      toastr.info("No ha ingresado el e-mail de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
+      //toastr.info("No ha ingresado el e-mail de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
       document.getElementById('eMailRef').style.border = "2px solid red";
       validados = false;
+    } else {
+      document.getElementById('eMailRef').style.border = "";
     } 
     
     if(validados === true) {
@@ -524,7 +536,7 @@ $(document).ready(function () {
        
 
          
-         $('.referencias ').append( '<div class="section" id="reference"><div class="container cc-reference"><div class="h4 mb-4 text-center title"></div><div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"><li class="active" data-target="#cc-Indicators" data-slide-to="0"></li><li data-target="#cc-Indicators" data-slide-to="1"></li><li data-target="#cc-Indicators" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div></div></div></div>' );
+         $('.referencias ').append( '<div class="section" id="reference"><div class="container cc-reference"><div class="h4 mb-4 text-center title"></div><div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div></div></div></div>' );
 
         document.getElementById('nombreRef').style.border = "";
         document.getElementById('apellidosRef').style.border = "";
@@ -534,13 +546,21 @@ $(document).ready(function () {
         document.getElementById('eMailRef').style.border = "";
         document.getElementById('recomendacionRef').style.border = "";
 
-        //document.getElementById('nombreCentroEducativo').value = "";
+        document.getElementById('nombreRef').value = "";
+        document.getElementById('apellidosRef').value = "";
+        document.getElementById('profesionRef').value = "";
+        document.getElementById('empresaRef').value = "";
+        document.getElementById('telefonoRef').value = "";
+        document.getElementById('eMailRef').value = "";
+        document.getElementById('recomendacionRef').value = "";
 
       }else{
 
         toastr.info("Solo se permite ingresar 3 referencias"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre habilidad está vacío
       }
 
+    } else {
+      toastr.info("No ha ingresado toda la información de la referencia"/*, "¡Aviso!"*/);
     }
 
 
