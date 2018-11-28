@@ -615,3 +615,16 @@ function cambiarColorFondo(){
   clickColor++;
 
 }
+
+
+
+
+
+    //var url = window.location.href;    
+    //if (url.indexOf('?') > -1){
+    //  url += '&param=1'
+    //}else{
+    //  url += '?param=1'
+    //}
+    url += '&name=1'
+    window.location.href = url;
