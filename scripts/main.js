@@ -537,6 +537,9 @@ $(document).ready(function () {
 
          
          $('.referencias ').append( '<div class="section" id="reference"><div class="container cc-reference"><div class="h4 mb-4 text-center title"></div><div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div></div></div></div>' );
+         //$('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"><li class="active" data-target="#cc-Indicators" data-slide-to="0"></li><li data-target="#cc-Indicators" data-slide-to="1"></li><li data-target="#cc-Indicators" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header"><div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco </p></div></div></div></div></div>' );
+         //$('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="row"> <div class="col-lg-2 col-md-3 cc-reference-header"> <div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco  </p> </div> </div></div>' );
+
 
         document.getElementById('nombreRef').style.border = "";
         document.getElementById('apellidosRef').style.border = "";
@@ -568,8 +571,8 @@ $(document).ready(function () {
 });
 
 
-var clickColor = 0;
 
+  var clickColor = 0;
 //Cambia el color de las secciones
 function cambiarColorFondo(){
 
@@ -640,19 +643,145 @@ function cambiarColorFondo(){
 
 
   function vistaPrevia(){
+    
+
+      //Falta ocultar Resumen e información personal
+      //Falta ocultar Experiencia Laboral
+
 
     document.getElementById('seccionHabilidadesEdicion').style.display = "none";
     document.getElementById('seccionEducacionEdicion').style.display = "none";
+    document.getElementById('seccionReferenciasEdicion').style.display = "none";
+   
 
+    document.getElementById('vistaPrevia').style.display = "none";
+    document.getElementById('modoEditar').style.display = "block";
+    document.getElementById('generarLink').style.display = "block";
+  }
+
+  function modoEditar(){
+    
+    document.getElementById('seccionHabilidadesEdicion').style.display = "block";
+    document.getElementById('seccionEducacionEdicion').style.display = "block";
+    document.getElementById('seccionReferenciasEdicion').style.display = "block";
+   
+
+    document.getElementById('vistaPrevia').style.display = "block";
+    document.getElementById('modoEditar').style.display = "none";
+    document.getElementById('generarLink').style.display = "none";
+  }
+
+
+function modoEditar(){
+  
+  document.getElementById('seccionHabilidadesEdicion').style.display = "block";
+  document.getElementById('seccionEducacionEdicion').style.display = "block";
+  document.getElementById('seccionReferenciasEdicion').style.display = "block";
+ 
+
+  document.getElementById('vistaPrevia').style.display = "block";
+  document.getElementById('modoEditar').style.display = "none";
+  document.getElementById('generarLink').style.display = "none";
+}
+
+
+
+
+
+
+  function modoFinal(){
+      
+
+    //Falta ocultar Resumen e información personal
+    //Falta ocultar Experiencia Laboral
+
+
+  document.getElementById('seccionHabilidadesEdicion').style.display = "none";
+  document.getElementById('seccionEducacionEdicion').style.display = "none";
+  document.getElementById('seccionReferenciasEdicion').style.display = "none";
+
+
+  document.getElementById('vistaPrevia').style.display = "none";
+  document.getElementById('modoEditar').style.display = "none";
+  document.getElementById('generarLink').style.display = "none";
+  document.getElementById('menu-share').style.display = "none";
   }
 
 
 
-    //var url = window.location.href;    
-    //if (url.indexOf('?') > -1){
-    //  url += '&param=1'
-    //}else{
-    //  url += '?param=1'
-    //}
-    //url += '&name=1'
-    //window.location.href = url;
+
+  var url;
+  var url2;
+
+ function generarLink(){
+    
+
+    
+   
+    if( document.getElementById('nombre').value === "" || document.getElementById('apellidos').value === ""){
+
+      toastr.info("Debe llenar los campos de nombre y apellidos para generar el link"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre habilidad está vacío
+    
+        if(document.getElementById('nombre').value === ""){
+          document.getElementById('nombre').style.border ="2px solid red";
+        }
+        if(document.getElementById('apellidos').value === ""){
+          document.getElementById('apellidos').style.border ="2px solid red";
+        }
+
+    }else{
+
+      document.getElementById('nombre').style.border ="";
+      document.getElementById('apellidos').style.border ="";
+
+      var nombre = document.getElementById('nombre').value;
+      var apellidos = document.getElementById('apellidos').value;
+      var name = nombre + "-" + apellidos;
+      
+
+       url = window.location.href + '&name='+ name;  
+      // url2 =  window.location.search + '&name='+name;
+        
+      $(document).ready(function(){ 
+         // alert("Su link es: " + url);
+         //url = window.location.href + '&name='+ name;
+         //
+        });
+        
+
+        toastr.options = {
+          timeOut: 0,
+          extendedTimeOut: 0,
+          tapToDismiss: false,
+          closeButton: true,
+          positionClass: "toast-bottom-center"
+      };
+        toastr.success( url );
+        
+        //toastr.info("Su link es: " + url/*, "¡Aviso!"*/); 
+     
+        
+       // window.location.search = '&name='+name;
+    }
+
+
+  }
+
+            $(document).ready(function () {
+
+              url = window.location.href
+              
+              var name = url.substring(url.indexOf("=") + 1);
+              //document.getElementById("user").value = name;
+              //alert(name);
+              //alert("url: " + url);
+
+              if(name != url){
+
+                modoFinal();
+
+              }
+
+
+            });
+  

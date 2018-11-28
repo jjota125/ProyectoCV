@@ -23,7 +23,7 @@
       <div class="profile-page sidebar-collapse">
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
           <div class="container">
-            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">Proyectito</a>
+            <div class="navbar-translate"><a class="navbar-brand smooth-scroll" href="#about" rel="tooltip">Proyectito</a>
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
@@ -31,8 +31,8 @@
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Acerca de mi</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#workPlaces">Experiencia</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#seccionHabilidades">Habilidades</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#seccionCentrosEducativos">Educación</a></li>
-                
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#seccionEducacion">Educación</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#seccionReferencias">Referencias</a></li>
                 <!--<li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>-->
                 
                 <!--<li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>-->
@@ -265,7 +265,7 @@
             </div>
             <br>
            
-            <button type="submit" class="btn btn-primary" id="agregarCentroEducativo" >+</button>
+            <button type="submit" class="btn btn-primary fa fa-plus" id="agregarCentroEducativo" ></button>
           </div>
         </div>
   </div>
@@ -381,24 +381,79 @@
           </div>
           <br>
          
-          <button type="submit" class="btn btn-primary" id="agregarReferencia" >+</button>
+          <button type="submit" class="btn btn-primary fa fa-plus" id="agregarReferencia" ></button>
         </div>
-      </div>
+    </div>
+  </div>
 </div>
+
+
+<!-- Espacios para que se vea la animación de referencias-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<!--
+<div class="section" id="reference">
+  <div class="container cc-reference">
+    <div class="h4 mb-4 text-center title">References</div>
+         <div class="card" data-aos="zoom-in">
+            <div class="row">
+              <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/reference-image-1.jpg" alt="Image"/>
+                <div class="h5 pt-2">Aiyana</div>
+                <p class="category">CEO / WEBM</p>
+              </div>
+              <div class="col-lg-10 col-md-9">
+                <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque etiam luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam ullamcorper, laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient fringilla rhoncus eleifend.</p>
+              </div>
+            </div>
+         </div>
+  </div>
 </div>
-      
- 
+-->
+
 
 <!-- Botones flotantes-->
 
-<a href="#" class="float2" id="vistaPrevia" onclick="vistaPrevia()">
+<a href="#" class="float4" id="generarLink" onclick="generarLink()" style="display: none;" >
+  <i class="fa fa-external-link my-float"></i>
+  </a>
+
+<a href="#" class="float3" id="modoEditar" onclick="modoEditar()" style="display: none;" >
+  <i class="fa fa-pencil my-float"></i>
+  </a>
+
+
+<a href="#" class="float2" id="vistaPrevia" onclick="vistaPrevia()" style="display: block;" >
     <i class="fa fa-eye my-float"></i>
     </a>
 
 
 <div class="flotante">
 
-  <a href="#" class="float" id="menu-share">
+  <a href="#" class="float" id="menu-share" style="display: block;">
     <i class="fa fa-reorder my-float"></i>
 
 
@@ -695,6 +750,14 @@
     </div>
   </div>
 </div>
+
+
+-->
+
+
+
+
+<!--
 <div class="section" id="contact">
   <div class="cc-contact-information" style="background-image: url('images/staticmap.png');">
     <div class="container">
@@ -787,5 +850,6 @@
     <script src="scripts/main.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  
   </body>
 </html>
