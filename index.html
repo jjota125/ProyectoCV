@@ -272,7 +272,7 @@
 </div>
 
 
-<div class="section">
+<div class="section" id="seccionReferencias">
   <div class="container cc-education">
     <div class="h4 text-center mb-4 title">Referencias</div>
     
@@ -283,16 +283,10 @@
          
       </div>
 
-      <div class="referencias">
-         
-        <!-- Acá se genera el html de cada centro educactivo con javascript al usar el agregarCentroEducativo -->
-     
-  </div>
-
 
     <div class="form-horizontal">
         <div class="control-group">
-          <label class="control-label"> Nombre completo de la referencia </label>
+          <label class="control-label"> Nombre de la referencia </label>
           <div class="controls">
             <input type="text" placeholder="Nombre" size="40" id="nombreRef"  required />
           </div>
@@ -302,7 +296,7 @@
             <input type="text" placeholder="Apellidos" size="40" id="apellidosRef"   required />
           </div>
           <br>
-          <label class="control-label"> Profesión de la referencia</label>
+          <label class="control-label"> Profesión</label>
           <div class="controls">
             <input type="text" placeholder="Profesión" size="40" id="profesionRef"   required />
           </div>
@@ -322,6 +316,10 @@
             <input type="text" placeholder="E-mail" size="30" id="eMailRef"  required />
           </div>
           <br>
+          <textarea rows="8" cols="50" maxlength="300" placeholder="Escriba aquí la recomendación (opcional)" id="recomendacionRef" ></textarea>
+          <div class="controls">
+          </div>
+          <br>
          
           <button type="submit" class="btn btn-primary" id="agregarReferencia" >+</button>
         </div>
@@ -329,8 +327,7 @@
 </div>
 </div>
       
-
-
+ 
 
 <!-- Botones flotantes-->
 
@@ -588,7 +585,7 @@
 
 -->
 
-<!--
+
 <div class="section" id="reference">
   <div class="container cc-reference">
     <div class="h4 mb-4 text-center title">References</div>
@@ -599,7 +596,7 @@
           <li data-target="#cc-Indicators" data-slide-to="1"></li>
           <li data-target="#cc-Indicators" data-slide-to="2"></li>
         </ol>
-        <div class="carousel-inner">
+        <!--<div class="carousel-inner">-->
           <div class="carousel-item active">
             <div class="row">
               <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/reference-image-1.jpg" alt="Image"/>
@@ -611,7 +608,7 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <!--<div class="carousel-inner">-->
             <div class="row">
               <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/reference-image-2.jpg" alt="Image"/>
                 <div class="h5 pt-2">Braiden</div>
@@ -622,7 +619,7 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <!--<div class="carousel-inner">-->
             <div class="row">
               <div class="col-lg-2 col-md-3 cc-reference-header"><img src="images/reference-image-3.jpg" alt="Image"/>
                 <div class="h5 pt-2">Alexander</div>
@@ -706,7 +703,7 @@
   </div>
   
 </div></div>
--->
+
 
  
     </div>

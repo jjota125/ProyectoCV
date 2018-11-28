@@ -470,6 +470,7 @@ $(document).ready(function () {
     empresaRef = document.getElementById("empresaRef").value;
     telefonoRef = document.getElementById("telefonoRef").value;
     eMailRef = document.getElementById("eMailRef").value;
+    recomendacionRef = document.getElementById("recomendacionRef").value;
 
     var validados = true;
           //validar campos
@@ -523,7 +524,7 @@ $(document).ready(function () {
        
 
          
-         $('.referencias ').append( '<div class="section" id="reference"><div class="container cc-reference"><div class="h4 mb-4 text-center title"></div><div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"><li class="active" data-target="#cc-Indicators" data-slide-to="0"></li><li data-target="#cc-Indicators" data-slide-to="1"></li><li data-target="#cc-Indicators" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco </p></div></div></div></div></div></div></div></div></div>' );
+         $('.referencias ').append( '<div class="section" id="reference"><div class="container cc-reference"><div class="h4 mb-4 text-center title"></div><div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"><li class="active" data-target="#cc-Indicators" data-slide-to="0"></li><li data-target="#cc-Indicators" data-slide-to="1"></li><li data-target="#cc-Indicators" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div></div></div></div>' );
 
         document.getElementById('nombreRef').style.border = "";
         document.getElementById('apellidosRef').style.border = "";
@@ -531,7 +532,8 @@ $(document).ready(function () {
         document.getElementById('empresaRef').style.border = "";
         document.getElementById('telefonoRef').style.border = "";
         document.getElementById('eMailRef').style.border = "";
-        
+        document.getElementById('recomendacionRef').style.border = "";
+
         //document.getElementById('nombreCentroEducativo').value = "";
 
       }else{
@@ -571,7 +573,7 @@ function cambiarColorFondo(){
   var secAbout = document.getElementById('about');
   secAbout.style.backgroundColor = "#3485b5";
 
-  var secReference = document.getElementById('reference');
+  var secReference = document.getElementById('seccionReferencias');
   secReference.style.backgroundColor = "#3485b5";
 
   
@@ -589,7 +591,7 @@ function cambiarColorFondo(){
     var secAbout = document.getElementById('about');
     secAbout.style.backgroundColor = "#34b574";
 
-    var secReference = document.getElementById('reference');
+    var secReference = document.getElementById('seccionReferencias');
     secReference.style.backgroundColor = "#34b574";
 
   }else {
@@ -606,7 +608,7 @@ function cambiarColorFondo(){
     var secAbout = document.getElementById('about');
     secAbout.style.backgroundColor = "#FFFFFF";
 
-    var secReference = document.getElementById('reference');
+    var secReference = document.getElementById('seccionReferencias');
     secReference.style.backgroundColor = "#FFFFFF";
     
     clickColor=-1;
