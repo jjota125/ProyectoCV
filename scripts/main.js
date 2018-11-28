@@ -589,6 +589,12 @@ function cambiarColorFondo(){
 }
 
 
+  function vistaPrevia(){
+
+    document.getElementById('seccionHabilidadesEdicion').style.display = "none";
+    document.getElementById('seccionEducacionEdicion').style.display = "none";
+
+  }
 
 
 
@@ -598,5 +604,5 @@ function cambiarColorFondo(){
     //}else{
     //  url += '?param=1'
     //}
-    url += '&name=1'
-    window.location.href = url;
+    //url += '&name=1'
+    //window.location.href = url;
