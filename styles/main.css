@@ -1532,6 +1532,7 @@ fieldset[disabled]
 .btn-primary {
   background-color: #378C3F;
   color: #FFFFFF;
+  border-radius:50px;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active:focus, .btn-primary.active:hover,
@@ -7306,10 +7307,37 @@ a.credit {
 
 
 
+.float4{
+	position:fixed;
+	width:100px;
+	height:60px;
+	bottom:40px;
+	right:250px;
+	background-color:rgb(15, 124, 6);
+	color:rgb(255, 255, 255);
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	z-index:1000;
+	animation: rotate-out 2s ease-out;
+}
 
 
 
-
+.float3{
+	position:fixed;
+	width:100px;
+	height:60px;
+	bottom:40px;
+	right:120px;
+	background-color:rgb(6, 60, 92);
+	color:rgb(255, 255, 255);
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	z-index:1000;
+	animation: rotate-in 2s ease-out;
+}
 
 .float2{
 	position:fixed;
@@ -7317,13 +7345,13 @@ a.credit {
 	height:60px;
 	bottom:40px;
 	right:120px;
-	background-color:rgb(29, 6, 235);
+	background-color:rgb(49, 117, 9);
 	color:rgb(255, 255, 255);
 	border-radius:50px;
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
 	z-index:1000;
-	animation: bot-to-top 2s ease-out;
+	animation: rotate-out 2s ease-out;
 }
 
 .float{
