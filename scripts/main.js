@@ -214,7 +214,7 @@ if (infoPersonalCompleta == true && editandoInfoPersonal == false){
       lResumen.style.display = "none";
 
       //Cambio de texto a "Vista previa" en el botón
-      bInfoPersonal.textContent = "Vista previa"
+      bInfoPersonal.textContent = "Guardar"
       editandoInfoPersonal = false;
 
     }
@@ -643,12 +643,27 @@ function cambiarColorFondo(){
 
 
   function vistaPrevia(){
+	  
+  var nombre = document.getElementById("nombre");
+  var apellidos = document.getElementById("apellidos");
+  var email = document.getElementById("email");
+  var telefono = document.getElementById("telefono");
+  var resumen = document.getElementById("resumen");
+	  
+	  if(nombre !== "" && apellidos !== "" && email !== "" && telefono !== "" && resumen !== ""){
+		  editandoInfoPersonal = false;
+	  }
+	  
     
-
-      //Falta ocultar Resumen e información personal
-      //Falta ocultar Experiencia Laboral
-
-	//document.getElementById('seccionResumenEdicion').style.display = "none";
+	  if(editandoInfoPersonal == false){
+		document.getElementById('botonInfoPersonalEdicion').style.display = "none";
+	  }
+	  else{
+		  document.getElementById('seccionResumenEdicion').style.display = "none";
+		  document.getElementById('seccionInfoPersonalEdicion').style.display = "none";
+	  }
+	
+	
 	document.getElementById('seccionExperienciaEdicion').style.display = "none";
     document.getElementById('seccionHabilidadesEdicion').style.display = "none";
     document.getElementById('seccionEducacionEdicion').style.display = "none";
@@ -661,8 +676,15 @@ function cambiarColorFondo(){
   }
 
   function modoEditar(){
+	  
+	  if(editandoInfoPersonal == false){
+		document.getElementById('botonInfoPersonalEdicion').style.display = "block";
+	  }
+	  else{
+		  document.getElementById('seccionResumenEdicion').style.display = "block";
+		  document.getElementById('seccionInfoPersonalEdicion').style.display = "block";
+	  }
     
-	//document.getElementById('seccionResumenEdicion').style.display = "block";
 	document.getElementById('seccionExperienciaEdicion').style.display = "block";
     document.getElementById('seccionHabilidadesEdicion').style.display = "block";
     document.getElementById('seccionEducacionEdicion').style.display = "block";
@@ -676,8 +698,15 @@ function cambiarColorFondo(){
 
 
 function modoEditar(){
+	
+	 if(editandoInfoPersonal == false){
+		document.getElementById('botonInfoPersonalEdicion').style.display = "block";
+	  }
+	  else{
+		  document.getElementById('seccionResumenEdicion').style.display = "block";
+		  document.getElementById('seccionInfoPersonalEdicion').style.display = "block";
+	  }
   
- // document.getElementById('seccionResumenEdicion').style.display = "block";
   document.getElementById('seccionExperienciaEdicion').style.display = "block";
   document.getElementById('seccionHabilidadesEdicion').style.display = "block";
   document.getElementById('seccionEducacionEdicion').style.display = "block";
