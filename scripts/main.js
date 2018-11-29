@@ -648,7 +648,8 @@ function cambiarColorFondo(){
       //Falta ocultar Resumen e información personal
       //Falta ocultar Experiencia Laboral
 
-
+	//document.getElementById('seccionResumenEdicion').style.display = "none";
+	document.getElementById('seccionExperienciaEdicion').style.display = "none";
     document.getElementById('seccionHabilidadesEdicion').style.display = "none";
     document.getElementById('seccionEducacionEdicion').style.display = "none";
     document.getElementById('seccionReferenciasEdicion').style.display = "none";
@@ -661,6 +662,8 @@ function cambiarColorFondo(){
 
   function modoEditar(){
     
+	//document.getElementById('seccionResumenEdicion').style.display = "block";
+	document.getElementById('seccionExperienciaEdicion').style.display = "block";
     document.getElementById('seccionHabilidadesEdicion').style.display = "block";
     document.getElementById('seccionEducacionEdicion').style.display = "block";
     document.getElementById('seccionReferenciasEdicion').style.display = "block";
@@ -674,6 +677,8 @@ function cambiarColorFondo(){
 
 function modoEditar(){
   
+ // document.getElementById('seccionResumenEdicion').style.display = "block";
+  document.getElementById('seccionExperienciaEdicion').style.display = "block";
   document.getElementById('seccionHabilidadesEdicion').style.display = "block";
   document.getElementById('seccionEducacionEdicion').style.display = "block";
   document.getElementById('seccionReferenciasEdicion').style.display = "block";
