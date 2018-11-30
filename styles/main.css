@@ -3419,6 +3419,7 @@ body {
 
 .bg-primary {
   background-color: #378C3F !important;
+  border-radius: 24px;
 }
 
 .bg-info {
