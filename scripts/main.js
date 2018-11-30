@@ -599,7 +599,13 @@ function cambiarColorFondo(){
   var secReference = document.getElementById('seccionReferencias');
   secReference.style.backgroundColor = "#3485b5";
 
+  var secPageContent = document.getElementById('seccionPageContent');
+  secPageContent.style.backgroundColor = "#3485b5";
+  //secPageContent.style.backgroundImage = 'images/cc-bg-1.jpg';
   
+  var secFooter = document.getElementById('seccionFooter');
+  secFooter.style.backgroundColor = "#3485b5";
+
   }else if(clickColor == 1){
 
     var secEducacion = document.getElementById('seccionEducacion');
@@ -617,6 +623,12 @@ function cambiarColorFondo(){
     var secReference = document.getElementById('seccionReferencias');
     secReference.style.backgroundColor = "#34b574";
 
+    var secPageContent = document.getElementById('seccionPageContent');
+    secPageContent.style.backgroundColor = "#34b574";
+
+    var secFooter = document.getElementById('seccionFooter');
+  secFooter.style.backgroundColor = "#34b574";
+
   }else {
 
     var secEducacion = document.getElementById('seccionEducacion');
@@ -633,6 +645,12 @@ function cambiarColorFondo(){
 
     var secReference = document.getElementById('seccionReferencias');
     secReference.style.backgroundColor = "#FFFFFF";
+
+    var secPageContent = document.getElementById('seccionPageContent');
+    secPageContent.style.backgroundColor = "#FFFFFF";
+
+    var secFooter = document.getElementById('seccionFooter');
+    secFooter.style.backgroundColor = "#FFFFFF";
     
     clickColor=-1;
   }
