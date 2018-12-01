@@ -51,24 +51,24 @@
       <div class="page-header-image" data-parallax="true" ></div><!--IMAGEN BACKGROUND style="background-image: url('images/cc-bg-1.jpg');"-->
       <div class="container">
         <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="images/avatar-default-icon.png" alt="Image"/></a></div><!--IMAGEN FOTO-->
+          <div class="cc-profile-image"><!--<a href="#">--><!--<img src="images/avatar-default-icon.png" alt="Image"/>--></a></div><!--IMAGEN FOTO-->
           <!--<input type="file" name="fileupload" value="fileupload" id="fileupload"> 
           <label for="fileupload"> Select a file to upload</label> <input type="submit" value="submit"> -->
 
-          <form action="upload.php" method="post" enctype="multipart/form-data">
+          <!--<form action="upload.php" method="post" enctype="multipart/form-data">
             Select image to upload:
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" value="Upload Image" name="submit">
-        </form>
+        </form>-->
 
         
 
 
-        <div id="editor">
+        <!--<div id="editor">
           <br><br>
             <button onclick="javascript:demoFromHTML()" class="button">Generar PDF</button>
           
-          </div>
+          </div>-->
 
           <div class="h2 title">Currículo</div>
           <!--<p class="category text-white">Web Developer, Graphic Designer,  Photographer</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>-->
@@ -161,7 +161,7 @@
         </div>
         <div class="row mt-3">
             <div class="col-sm-4"><strong class="text-uppercase">Nombre de la compañía</strong></div>
-            <div class="col-sm-8"><input type="text" maxlength="30" placeholder = "Nombre de la compañía aquí" id="nombreC" required>
+            <div class="col-sm-8"><input type="text" maxlength="30" placeholder = "Nombre de la compañía" id="nombreC" required>
             <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="apellidos" required>Click para añadir apellidos</label> -->
             <label type="label" id="lNombreC"></label></div>  
         </div>
@@ -249,8 +249,6 @@
            
         </div>
 
-       
-
       <div class="form-horizontal" style="display: block;" id="seccionEducacionEdicion">
           <div class="control-group">
             <strong class="text-uppercase"> Ingrese el nombre del centro educativo </strong>
@@ -270,7 +268,7 @@
             <br>
             <strong class="text-uppercase"> Ingrese el año de inicio y de finalización </strong>
             <div class="controls">
-              <input type="text" placeholder="  2001 - 2002,  2001 - Presente" size="30" id="fechasCentroEducativo"  required />
+              <input type="text" placeholder=" Ejemplo: 2001 - 2002,  2001 - Presente" size="30" id="fechasCentroEducativo"  required />
             </div>
             <br>
            

@@ -407,28 +407,36 @@ $(document).ready(function () {
     var validados = true;
           //validar campos
     if (nombreCentroEducativo === "") {
-      toastr.info("No ha ingresado el nombre del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre Centro Educativo está vacío
+      //toastr.info("No ha ingresado el nombre del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre Centro Educativo está vacío
       document.getElementById('nombreCentroEducativo').style.border = "2px solid red";
       validados = false;
-    } 
+    } else {
+      document.getElementById('nombreCentroEducativo').style.border = "";
+    }  
     
     if (ubicacionCentroEducativo === "") {
-      toastr.info("No ha ingresado la ubicación del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo ubicacion Centro Educativo está vacío
+      //toastr.info("No ha ingresado la ubicación del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo ubicacion Centro Educativo está vacío
       document.getElementById('ubicacionCentroEducativo').style.border = "2px solid red";
       validados = false;
-    } 
+    } else {
+      document.getElementById('ubicacionCentroEducativo').style.border = "";
+    }  
     
     if (tituloCentroEducativo === "") {
-      toastr.info("No ha ingresado el título del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo titulo Centro Educativo está vacío
+      //toastr.info("No ha ingresado el título del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo titulo Centro Educativo está vacío
       document.getElementById('tituloCentroEducativo').style.border = "2px solid red";
       validados = false;
-    }
+    } else {
+      document.getElementById('tituloCentroEducativo').style.border = "";
+    } 
   
     if (fechasCentroEducativo === "") {
-      toastr.info("No ha ingresado las fechas del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
+      //toastr.info("No ha ingresado las fechas del Centro Educativo"/*, "¡Aviso!"*/); //Mensaje de error si el campo fechas Centro Educativo está vacío
       document.getElementById('fechasCentroEducativo').style.border = "2px solid red";
       validados = false;
-    } 
+    } else {
+      document.getElementById('fechasCentroEducativo').style.border = "";
+    }  
     
     if(validados === true) {
 
@@ -447,6 +455,11 @@ $(document).ready(function () {
         document.getElementById('tituloCentroEducativo').style.border = "";
         document.getElementById('fechasCentroEducativo').style.border = "";
         
+        document.getElementById('nombreCentroEducativo').value = "";
+        document.getElementById('ubicacionCentroEducativo').value = "";
+        document.getElementById('tituloCentroEducativo').value = "";
+        document.getElementById('fechasCentroEducativo').value = "";
+        
         //document.getElementById('nombreCentroEducativo').value = "";
 
       }else{
@@ -454,6 +467,8 @@ $(document).ready(function () {
         toastr.info("Solo se permite ingresar 6 Centros Educativos"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre habilidad está vacío
       }
 
+    } else {
+      toastr.info("No ha ingresado toda su información educativa"/*, "¡Aviso!"*/);
     }
 
 
