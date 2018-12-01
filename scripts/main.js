@@ -683,20 +683,21 @@ function cambiarColorFondo(){
   var telefono = document.getElementById("telefono");
   var resumen = document.getElementById("resumen");
 	  
+	  
 	  if(nombre !== "" && apellidos !== "" && email !== "" && telefono !== "" && resumen !== ""){
 		  editandoInfoPersonal = false;
 	  }
 	  
-    
+    //Si la info personal esta completa, se oculta solo el boton de "Editar"
 	  if(editandoInfoPersonal == false){
 		document.getElementById('botonInfoPersonalEdicion').style.display = "none";
 	  }
-	  else{
+	  else{ //Si hay algun campo vacio entonces se deja el formulario
 		  document.getElementById('seccionResumenEdicion').style.display = "none";
 		  document.getElementById('seccionInfoPersonalEdicion').style.display = "none";
 	  }
 	
-	
+	//Se ocultan los campos de edicion
 	document.getElementById('seccionExperienciaEdicion').style.display = "none";
     document.getElementById('seccionHabilidadesEdicion').style.display = "none";
     document.getElementById('seccionEducacionEdicion').style.display = "none";
@@ -709,6 +710,7 @@ function cambiarColorFondo(){
   }
 
   function modoEditar(){
+	  //Se muestran los campos de edicion
 	  
 	  if(editandoInfoPersonal == false){
 		document.getElementById('botonInfoPersonalEdicion').style.display = "block";
