@@ -551,7 +551,7 @@ $(document).ready(function () {
        
 
          
-         $('.referencias ').append( '</div><div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div>' );
+         $('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div></div></div></div>' );
          //$('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"><li class="active" data-target="#cc-Indicators" data-slide-to="0"></li><li data-target="#cc-Indicators" data-slide-to="1"></li><li data-target="#cc-Indicators" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header"><div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco </p></div></div></div></div></div>' );
          //$('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="row"> <div class="col-lg-2 col-md-3 cc-reference-header"> <div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco  </p> </div> </div></div>' );
 
@@ -683,21 +683,20 @@ function cambiarColorFondo(){
   var telefono = document.getElementById("telefono");
   var resumen = document.getElementById("resumen");
 	  
-	  
 	  if(nombre !== "" && apellidos !== "" && email !== "" && telefono !== "" && resumen !== ""){
 		  editandoInfoPersonal = false;
 	  }
 	  
-    //Si la info personal esta completa, se oculta solo el boton de "Editar"
+    
 	  if(editandoInfoPersonal == false){
 		document.getElementById('botonInfoPersonalEdicion').style.display = "none";
 	  }
-	  else{ //Si hay algun campo vacio entonces se deja el formulario
+	  else{
 		  document.getElementById('seccionResumenEdicion').style.display = "none";
 		  document.getElementById('seccionInfoPersonalEdicion').style.display = "none";
 	  }
 	
-	//Se ocultan los campos de edicion
+	
 	document.getElementById('seccionExperienciaEdicion').style.display = "none";
     document.getElementById('seccionHabilidadesEdicion').style.display = "none";
     document.getElementById('seccionEducacionEdicion').style.display = "none";
@@ -710,7 +709,6 @@ function cambiarColorFondo(){
   }
 
   function modoEditar(){
-	  //Se muestran los campos de edicion
 	  
 	  if(editandoInfoPersonal == false){
 		document.getElementById('botonInfoPersonalEdicion').style.display = "block";
