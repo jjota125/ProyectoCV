@@ -476,9 +476,10 @@ $(document).ready(function () {
 
 
 
-
+    // Función que agrega dinámicamente información de referencias
     $("#agregarReferencia").click(function () {
-          
+
+    // información ingresada en input      
     nombreRef = document.getElementById("nombreRef").value;
     apellidosRef = document.getElementById("apellidosRef").value;
     profesionRef = document.getElementById("profesionRef").value;
@@ -488,7 +489,9 @@ $(document).ready(function () {
     recomendacionRef = document.getElementById("recomendacionRef").value;
 
     var validados = true;
-          //validar campos
+
+      // Revisión de cada uno de los campos de input para saber si están vacíos o no. Si lo están, se activa un mensaje
+      // y se ponen en color rojo. El color rojo se quita al estar llenos los campos
     if (nombreRef === "") {
       //toastr.info("No ha ingresado el nombre de la referencia"/*, "¡Aviso!"*/); //Mensaje de error si el campo nombre Centro Educativo está vacío
       document.getElementById('nombreRef').style.border = "2px solid red";
@@ -542,20 +545,13 @@ $(document).ready(function () {
       //Agrega dinamicamente código en la página
       var id = ($('.referencias .control-group').length + 1).toString();
 
+
       if (id <= 3) { //Agregar un máximo
         
-        
-        //$('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="inputEmail' + id + '">Email' + id + '</label><div class="controls' + id + '"><input type="text" id="inputEmail' + id + '" placeholder="Email"></div></div>');
-      
-         // $('.centrosEducativos ').append(' <div class="card"> <div class="row">  <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"><div class="card-body cc-education-header"><p class="h5">' + fechasCentroEducativo2 +'</p><br><div class="h5">' + ubicacionCentroEducativo2 + '</div></div></div><div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"><div class="card-body"><div class="h2">' + tituloCentroEducativo2 + '</div><h3 align="center"> ' + nombreCentroEducativo2 + '</h3></div></div></div></div>');
-       
-
+        // añadido dinámico de la tarjeta de una referencia si se cumplen todas las condiciones anteriores
+        $('.referencias ').append( '</div><div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div>' );
          
-         $('.referencias ').append( '</div><div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div>' );
-         //$('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"><li class="active" data-target="#cc-Indicators" data-slide-to="0"></li><li data-target="#cc-Indicators" data-slide-to="1"></li><li data-target="#cc-Indicators" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header"><div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco </p></div></div></div></div></div>' );
-         //$('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="row"> <div class="col-lg-2 col-md-3 cc-reference-header"> <div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco  </p> </div> </div></div>' );
-
-
+        // Se borra cualquier color rojo en los campos que no estaban
         document.getElementById('nombreRef').style.border = "";
         document.getElementById('apellidosRef').style.border = "";
         document.getElementById('profesionRef').style.border = "";
@@ -564,6 +560,7 @@ $(document).ready(function () {
         document.getElementById('eMailRef').style.border = "";
         document.getElementById('recomendacionRef').style.border = "";
 
+        // Se borran los inputs ingresados anteriormente
         document.getElementById('nombreRef').value = "";
         document.getElementById('apellidosRef').value = "";
         document.getElementById('profesionRef').value = "";
@@ -684,7 +681,7 @@ function cambiarColorFondo(){
   var resumen = document.getElementById("resumen");
 	  
 	  
-	  if(nombre !== "" && apellidos !== "" && email !== "" && telefono !== "" && resumen !== ""){
+	  if(nombre.value !== "" && apellidos.value !== "" && email.value !== "" && telefono.value !== "" && resumen.value !== ""){
 		  editandoInfoPersonal = false;
 	  }
 	  
