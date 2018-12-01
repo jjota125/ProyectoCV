@@ -705,7 +705,7 @@ function cambiarColorFondo(){
 
     document.getElementById('vistaPrevia').style.display = "none";
     document.getElementById('modoEditar').style.display = "block";
-    document.getElementById('generarLink').style.display = "block";
+    document.getElementById('generarLink').style.display = "none"; 
   }
 
   function modoEditar(){
