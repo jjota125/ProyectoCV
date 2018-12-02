@@ -1,5 +1,19 @@
 <?php
-/*$target_dir = "images/";//"uploads/"
+// https://www.youtube.com/watch?v=68J-6ga0gjI
+$file = $_FILES["file"];
+
+move_uploaded_file($file["tmp_name"], "uploads/" . $file["name"]);
+
+header("Location: index.php");
+/*$targetFile = 'images/' . basename($_FILES["fileToUpload"]["name"]);
+
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
+      //file was successfully uploaded
+    }*/
+
+
+/*echo "test";
+$target_dir = "images/";//"uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -20,7 +34,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["fileToUpload"]["size"] > 2000000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
