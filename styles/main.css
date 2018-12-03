@@ -7303,7 +7303,16 @@ a.credit {
 
 
 
-
+.editor .button{
+	background-color:rgb(15, 124, 6);
+	color:rgb(255, 255, 255);
+	border-radius:50px;
+	text-align:center;
+	width:150px;
+	height:60px;
+	margin-left: 500px;
+	margin-top: 50px;
+}
 
 
 
