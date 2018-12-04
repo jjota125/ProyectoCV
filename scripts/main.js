@@ -856,4 +856,50 @@ function modoEditar(){
 
 
             });
-  
+
+
+            function openFile(){
+
+             /*
+              var fh = fopen(getScriptPath(), 0); // Open the file for reading
+
+             
+
+              if(fh!=-1) // If the file has been successfully opened
+              
+              {
+              
+              length = flength(fh); // Get the length of the file
+              
+              str = fread(fh, length); // Read in the entire file
+              
+              fclose(fh); // Close the file
+              
+              // Display the contents of the file
+              
+              write(str);
+            */
+            }
+
+
+            function WriteFile()
+
+            {
+            
+            var fh = fopen("c:\\MyFile.txt", 3); // Open the file for writing
+            
+            if(fh!=-1) // If the file has been successfully opened
+            
+            {
+            
+            var str = "Some text goes here...";
+            
+            fwrite(fh, str); // Write the string to a file
+            
+            fclose(fh); // Close the file
+            
+            }
+            
+            }
+            
+            WriteFile();
