@@ -589,6 +589,94 @@ $(document).ready(function () {
         });    
 });
 
+function addReferencia()
+{
+  if (!((document.getElementById("nombreRef").value == "") || (document.getElementById("apellidosRef").value == "") || (document.getElementById("profesionRef").value == "") || (document.getElementById("empresaRef").value == "") || (document.getElementById("telefonoRef").value == "") || (document.getElementById("eMailRef").value == "") ))
+  {
+    var nombreRef = document.getElementById("nombreRef").value;
+    var apellidosRef = document.getElementById("apellidosRef").value;
+    var profesionRef = document.getElementById("profesionRef").value;
+    var empresaRef = document.getElementById("empresaRef").value;
+    var telefonoRef = document.getElementById("telefonoRef").value;
+    var eMailRef = document.getElementById("eMailRef").value;
+    var referenciaRef = document.getElementById("referenciaRef").value;
+
+    $('.works').append('<div class="container cc-experience"> <div class="row"> <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p>  </p> <div class="h5">'+ nombreRef +' '+apellidosRef+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5">'+ empresaRef + " | " + profesionRef + '</div> <p> '+ "Teléfono: " +telefonoRef + ' | ' + 'e-Mail: ' + eMailRef + '<br><br>' + referenciaRef + '</p> </div> </div> </div> </div> <br>');
+
+    document.getElementById("lNombreRef").value = "";
+    document.getElementById("lApellidosRef").value = "";
+    document.getElementById("lProfesionRef").value = "";
+    document.getElementById("lEmpresaRef").value = "";
+    document.getElementById("lTelefonoRef").value = "";
+    document.getElementById("lEMailRef").value = "";
+
+    nombreRef.style.border ="";
+    apellidosRef.style.border ="";
+    profesionRef.style.border ="";
+    empresaRef.style.border ="";
+    telefonoRef.style.border ="";
+    eMailRef.style.border ="";
+    referenciaRef.style.border ="";
+  }
+  else
+  {
+    toastr.info("No ha ingresado toda la información de la referencia"/*, "¡Aviso!"*/);
+
+    if (document.getElementById("nombreRef").value == "")
+    {
+      nombreRef.style.border ="2px solid red";
+    }
+    else 
+    {
+      nombreRef.style.border ="";
+    }
+
+    if (document.getElementById("apellidosRef").value == "")
+    {
+      apellidosRef.style.border ="2px solid red";
+    }
+    else 
+    {
+      apellidosRef.style.border ="";
+    }
+
+    if (document.getElementById("profesionRef").value == "")
+    {
+      profesionRef.style.border ="2px solid red";
+    }
+    else 
+    {
+      profesionRef.style.border ="";
+    }
+
+    if (document.getElementById("empresaRef").value == "")
+    {
+      empresaRef.style.border ="2px solid red";
+    }
+    else 
+    {
+      empresaRef.style.border ="";
+    }
+
+    if (document.getElementById("telefonoRef").value == "")
+    {
+      telefonoRef.style.border ="2px solid red";
+    }
+    else 
+    {
+      telefonoRef.style.border ="";
+    }
+
+    if (document.getElementById("eMailRer").value == "")
+    {
+        eMailRef.style.border ="2px solid red";
+    }
+    else 
+    {
+      eMailRef.style.border ="";
+    }
+  }
+}
 
 
   var clickColor = 0;
@@ -706,6 +794,7 @@ function cambiarColorFondo(){
     document.getElementById('seccionHabilidadesEdicion').style.display = "none";
     document.getElementById('seccionEducacionEdicion').style.display = "none";
     document.getElementById('seccionReferenciasEdicion').style.display = "none";
+    document.getElementById('lCarga').style.display = "none";
    
 
     document.getElementById('vistaPrevia').style.display = "none";
@@ -727,6 +816,7 @@ function cambiarColorFondo(){
     document.getElementById('seccionHabilidadesEdicion').style.display = "block";
     document.getElementById('seccionEducacionEdicion').style.display = "block";
     document.getElementById('seccionReferenciasEdicion').style.display = "block";
+    document.getElementById('lCarga').style.display = "block";
    
 
     document.getElementById('vistaPrevia').style.display = "block";
@@ -749,6 +839,7 @@ function modoEditar(){
   document.getElementById('seccionHabilidadesEdicion').style.display = "block";
   document.getElementById('seccionEducacionEdicion').style.display = "block";
   document.getElementById('seccionReferenciasEdicion').style.display = "block";
+  document.getElementById('lCarga').style.display = "block";
  
 
   document.getElementById('vistaPrevia').style.display = "block";

@@ -87,6 +87,7 @@
 </div>
 <div class="section" id="about" >
   <div class="container">
+      <div class="h4 text-center mb-4 title">Información Personal</div>
     <div class="card" data-aos="fade-up" data-aos-offset="10">
       <div class="row">
         <div class="col-lg-6 col-md-12">
@@ -101,7 +102,7 @@
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
-            <div class="h4 mt-0 title">Información Personal</div>
+            <!-- <div class="h4 mt-0 title">Información Personal</div>-->
             <div class="form-horizontal"  style="display: block;" id="seccionInfoPersonalEdicion"> 
             <div class="row">
               <!-- Write your comments here -->
@@ -195,7 +196,7 @@
         <div class="row mt-3">
             <!--<input type='button' value='Agregar información' id='infoButton' />-->
             <!--<button onclick="infoPersonal()" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor" id="bInfoPersonal">Vista previa</button>-->
-            <button type="submit" class="btn btn-primary" onclick="addWork()"  id="bInfoPersonal">Añadir</button>
+            <button type="submit" class="btn btn-primary fa fa-plus" onclick="addWork()"  id="bInfoPersonal"></button>
           <!--<div class="col-sm-8"><input type="reset"></strong></div>-->
         </div>
       </div>
@@ -234,7 +235,7 @@
           </select>
         </div>
         <br>
-        <button type="submit" class="btn btn-primary" id="agregarHabilidad" >Agregar habilidad</button>
+        <button type="submit" class="btn btn-primary fa fa-plus" id="agregarHabilidad" ></button>
       </div>
     </div>
   </div>
@@ -301,15 +302,15 @@
 </style>
 
 
-<div class="section" id="seccionReferencias">
+<!--<div class="section" id="seccionReferencias">
   <div class="container cc-reference">
     <div class="h4 text-center mb-4 title">Referencias</div>
       
-    <div class="referencias">
+    <div class="referencias">-->
        
             <!-- Acá se genera el html de cada referencia con javascript al usar el agregarReferencia-->
          
-      </div>
+     <!-- </div>
     
       <div class="form-horizontal" id="seccionReferenciasEdicion">
 
@@ -338,7 +339,7 @@
         <table>
             <tr>
                 <td><strong class="text-uppercase"> Teléfono </strong></td>
-                <td><tab1><strong class="text-uppercase"> E-mail </strong></tab1></td>
+                <td><tab1><strong class="text-uppercase"> e-mail </strong></tab1></td>
             </tr>
             <tr>
                 <td></tab1><input type="text" placeholder="Teléfono" size="40" id="telefonoRef"  required /></td>
@@ -351,7 +352,72 @@
                 <td><strong class="text-uppercase"> Recomendación (opcional)</strong></td>
             </tr>
             </tr>
-        </table>
+        </table>-->
+
+        <!-- Sección de Companias -->
+<div class="section" id="seccionReferencias">
+    <div class="container">
+      <div class="h4 text-center mb-4 title">Referencias</div>
+        <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="card-body">
+          <div class="works">
+                  <!-- Acá se genera el html de cada habilidad con javascript al usar el abbWork -->
+          </div>
+       <div class="form-horizontal"  style="display: block;" id="seccionReferenciasEdicion">
+          <div class="row">
+            <!-- Write your comments here -->
+            <div class="col-sm-4"><strong class="text-uppercase">Nombre de la referencias</strong></div>
+            <div class="col-sm-8"><input type="text" maxlength="30" placeholder = "Nombre" id="nombreRef" required>
+            <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="nombre" placeholder = "algo" required>Click para añadir nombre</label> -->
+            <label type="label" id="lNombreRef"></label></div>
+          </div>
+          <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Apellidos de la referencia</strong></div>
+              <div class="col-sm-8"><input type="text" maxlength="30" placeholder = "Apellidos" id="apellidosRef" required>
+              <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="apellidos" required>Click para añadir apellidos</label> -->
+              <label type="label" id="lApellidosRef"></label></div>  
+          </div>
+          <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Profesión</strong></div>
+              <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "Profesión" id="profesionRef" required>
+              <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
+              <label type="label" id="lUbicacion"></label></div>  
+          </div>
+          <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Labora</strong></div>
+              <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "Empresa en que labora" id="empresaRef" required>
+              <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
+              <label type="label" id="lEmpresaRef"></label></div>  
+          </div>
+          <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Teléfono</strong></div>
+              <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "Teléfono" id="telefonoRef" required>
+              <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
+              <label type="label" id="lTelefonoRef"></label></div>  
+          </div>
+          <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">e-Mail</strong></div>
+              <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "e-Mail" id="eMailRef" required>
+              <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
+              <label type="label" id="lEMailRef"></label></div>  
+          </div>
+          <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Referencia</strong> </div>
+              <textarea rows="8" cols="50" maxlength="300" id="referenciaRef" placeholder = "Escriba aquí la referencia (opcional)" required></textarea> 
+              <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="email" required>Click para añadir E-mail</label> -->
+              <label type="label" id="lReferenciaRef"></label>  
+          </div>
+          <div class="row mt-3">
+              <!--<input type='button' value='Agregar información' id='infoButton' />-->
+              <!--<button onclick="infoPersonal()" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor" id="bInfoPersonal">Vista previa</button>-->
+              <button type="submit" class="btn btn-primary fa fa-plus" onclick="addReferencia()"  id="bReferencia"></button>
+            <!--<div class="col-sm-8"><input type="reset"></strong></div>-->
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -384,7 +450,7 @@
           <label class="control-label"> E-mail </label>
           <div class="controls">
             <input type="text" placeholder="E-mail" size="30" id="eMailRef"  required />
-          </div>-->
+          </div>
           <br>
           <textarea rows="8" cols="50" maxlength="300" placeholder="Escriba aquí la recomendación" id="recomendacionRef" ></textarea>
           <div class="controls">
@@ -395,7 +461,7 @@
         </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <!-- Espacios para que se vea la animación de referencias-->
