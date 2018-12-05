@@ -60,6 +60,16 @@ var ubicacionCentroEducativo;
 var tituloCentroEducativo;
 var fechasCentroEducativo;
 
+var secHabilidadesDatos = "";
+var cantHabilidadesDatos = 0;
+var secEducacionDatos = "";
+var cantEducacionDatos = 0;
+var secReferenciasDatos = "";
+var cantReferenciasDatos = 0;
+var secExperienciaLaboralDatos = "";
+var cantExperienciaLaboralDatos = 0;
+var secInformacionPersonalDatos = "";
+
 //Cuando ya la pag esté cargada entonces sigue
 window.onload = function(){
 
@@ -180,6 +190,14 @@ if (infoPersonalCompleta == true && editandoInfoPersonal == false){
   lTelefono.innerHTML = document.getElementById("telefono").value;
   lResumen.innerHTML = document.getElementById("resumen").value;
 
+  var lNombreDato = document.getElementById("nombre").value;
+  var lApellidosDato = document.getElementById("apellidos").value;
+  var lEMailDato = document.getElementById("email").value;
+  var lTelefonoDato = document.getElementById("telefono").value;
+  var lResumenDato = document.getElementById("resumen").value;
+
+  secInformacionPersonalDatos +=  "_"+lNombreDato + "_"+lApellidosDato + "_"+lEMailDato + "_"+lTelefonoDato + "_"+lResumenDato;
+
   nombre.style.display = "none";
   apellidos.style.display = "none";
   email.style.display = "none";
@@ -239,7 +257,13 @@ function addWork()
     var cUbicacion = document.getElementById("ubicacion").value;
     
 
-    $('.works').append('<div class="container cc-experience"> <div class="row"> <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p> '+ cInicio +' - '+ cFinal +' </p> <div class="h5">'+cNombre+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5">'+ cTitulo +'</div> <p> '+ cDescirpcion +' <br> Ubicación: '+ cUbicacion +' </p> </div> </div> </div> </div> <br>');
+    $('.works').append('<div class="card"> <div class="row">  <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p align="center"> '+ cInicio +' - '+ cFinal +' </p> <div class="h5">'+cNombre+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5" align="center">'+ cTitulo +'</div> <p> '+ cDescirpcion +' <br> Ubicación: '+ cUbicacion +' </p>  </div> </div> </div> </div> </div>');
+
+
+    secExperienciaLaboralDatos +=  "_"+cInicio + "_"+cFinal + "_"+cNombre + "_"+cTitulo + "_"+cDescirpcion + "_"+cUbicacion;
+    cantExperienciaLaboralDatos = cantExperienciaLaboralDatos + 1;
+
+
 
     document.getElementById("titulo").value = "";
     document.getElementById("nombreC").value = "";
@@ -384,8 +408,13 @@ $(document).ready(function () {
       
           $('.skills .row').append(' <div  class="control-group col-md-6 " id="control-group' + id + '" >   <div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
        
+        secHabilidadesDatos +=  "_"+nombreHabilidad + "_"+porcentajeHabilidad + "_"+nivelHabilidad;
+        cantHabilidadesDatos = cantHabilidadesDatos + 1;
+
         document.getElementById('habilidad').style.border = "";
         document.getElementById('habilidad').value = "";
+
+
 
       }else{
 
@@ -453,6 +482,11 @@ $(document).ready(function () {
       
           $('.centrosEducativos ').append(' <div class="card"> <div class="row">  <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"><div class="card-body cc-education-header"><p class="h5">' + fechasCentroEducativo +'</p><br><div class="h5">' + ubicacionCentroEducativo + '</div></div></div><div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"><div class="card-body"><div class="h2">' + tituloCentroEducativo + '</div><h3 align="center"> ' + nombreCentroEducativo + '</h3></div></div></div></div>');
        
+          secEducacionDatos +=  "_"+fechasCentroEducativo + "_"+ubicacionCentroEducativo + "_"+tituloCentroEducativo + "_"+nombreCentroEducativo;
+          cantEducacionDatos = cantEducacionDatos + 1;
+  
+
+
         document.getElementById('nombreCentroEducativo').style.border = "";
         document.getElementById('ubicacionCentroEducativo').style.border = "";
         document.getElementById('tituloCentroEducativo').style.border = "";
@@ -557,7 +591,9 @@ $(document).ready(function () {
          $('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div></div></div></div>' );
          //$('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"><li class="active" data-target="#cc-Indicators" data-slide-to="0"></li><li data-target="#cc-Indicators" data-slide-to="1"></li><li data-target="#cc-Indicators" data-slide-to="2"></li></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header"><div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco </p></div></div></div></div></div>' );
          //$('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="row"> <div class="col-lg-2 col-md-3 cc-reference-header"> <div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category">' + profesionRef + ' / ' + empresaRef + '</p></div><div class="col-lg-10 col-md-9"><p> espacio en blanco  </p> </div> </div></div>' );
-
+         
+         secReferenciasDatos +=  "_"+nombreRef + "_"+apellidosRef + "_"+profesionRef + "_"+empresaRef + "_"+telefonoRef + "_"+eMailRef + "_"+recomendacionRef ;
+         cantReferenciasDatos = cantReferenciasDatos + 1;
 
         document.getElementById('nombreRef').style.border = "";
         document.getElementById('apellidosRef').style.border = "";
@@ -767,6 +803,13 @@ function cambiarColorFondo(){
 }
 
 
+
+
+
+
+
+
+
   function vistaPrevia(){
 	  
   var nombre = document.getElementById("nombre");
@@ -782,7 +825,7 @@ function cambiarColorFondo(){
 	  
     
 	  if(editandoInfoPersonal == false){
-		document.getElementById('botonInfoPersonalEdicion').style.display = "none";
+		  document.getElementById('botonInfoPersonalEdicion').style.display = "none";
 	  }
 	  else{
 		  document.getElementById('seccionResumenEdicion').style.display = "none";
@@ -790,7 +833,7 @@ function cambiarColorFondo(){
 	  }
 	
 	
-	document.getElementById('seccionExperienciaEdicion').style.display = "none";
+	  document.getElementById('seccionExperienciaEdicion').style.display = "none";
     document.getElementById('seccionHabilidadesEdicion').style.display = "none";
     document.getElementById('seccionEducacionEdicion').style.display = "none";
     document.getElementById('seccionReferenciasEdicion').style.display = "none";
@@ -799,8 +842,18 @@ function cambiarColorFondo(){
 
     document.getElementById('vistaPrevia').style.display = "none";
     document.getElementById('modoEditar').style.display = "block";
-    document.getElementById('generarLink').style.display = "none"; 
+    document.getElementById('generarLink').style.display = "block"; 
   }
+
+
+
+
+
+
+
+
+
+
 
   function modoEditar(){
 	  
@@ -812,7 +865,7 @@ function cambiarColorFondo(){
 		  document.getElementById('seccionInfoPersonalEdicion').style.display = "block";
 	  }
     
-	document.getElementById('seccionExperienciaEdicion').style.display = "block";
+	  document.getElementById('seccionExperienciaEdicion').style.display = "block";
     document.getElementById('seccionHabilidadesEdicion').style.display = "block";
     document.getElementById('seccionEducacionEdicion').style.display = "block";
     document.getElementById('seccionReferenciasEdicion').style.display = "block";
@@ -825,28 +878,6 @@ function cambiarColorFondo(){
   }
 
 
-function modoEditar(){
-	
-	 if(editandoInfoPersonal == false){
-		document.getElementById('botonInfoPersonalEdicion').style.display = "block";
-	  }
-	  else{
-		  document.getElementById('seccionResumenEdicion').style.display = "block";
-		  document.getElementById('seccionInfoPersonalEdicion').style.display = "block";
-	  }
-  
-  document.getElementById('seccionExperienciaEdicion').style.display = "block";
-  document.getElementById('seccionHabilidadesEdicion').style.display = "block";
-  document.getElementById('seccionEducacionEdicion').style.display = "block";
-  document.getElementById('seccionReferenciasEdicion').style.display = "block";
-  document.getElementById('lCarga').style.display = "block";
- 
-
-  document.getElementById('vistaPrevia').style.display = "block";
-  document.getElementById('modoEditar').style.display = "none";
-  document.getElementById('generarLink').style.display = "none";
-}
-
 
 
 
@@ -854,20 +885,36 @@ function modoEditar(){
 
   function modoFinal(){
       
+   
+   
+    document.getElementById("nombre").style.display = "none";
+    document.getElementById("apellidos").style.display = "none";
+    document.getElementById("email").style.display = "none";
+    document.getElementById("telefono").style.display = "none";
+    document.getElementById("resumen").style.display = "none";
+    document.getElementById('botonInfoPersonalEdicion').style.display = "none";
 
-    //Falta ocultar Resumen e información personal
-    //Falta ocultar Experiencia Laboral
+    document.getElementById('botonInfoPersonalEdicion').style.display = "none";
+    //document.getElementById('seccionResumenEdicion').style.display = "none";
+   // document.getElementById('seccionInfoPersonalEdicion').style.display = "none";
+    document.getElementById('seccionExperienciaEdicion').style.display = "none";
+
+    document.getElementById('seccionHabilidadesEdicion').style.display = "none";
+    document.getElementById('seccionEducacionEdicion').style.display = "none";
+    document.getElementById('seccionReferenciasEdicion').style.display = "none";
 
 
-  document.getElementById('seccionHabilidadesEdicion').style.display = "none";
-  document.getElementById('seccionEducacionEdicion').style.display = "none";
-  document.getElementById('seccionReferenciasEdicion').style.display = "none";
+    document.getElementById('vistaPrevia').style.display = "none";
+    document.getElementById('modoEditar').style.display = "none";
+    document.getElementById('generarLink').style.display = "none";
+    document.getElementById('menu-share').style.display = "none";
 
 
-  document.getElementById('vistaPrevia').style.display = "none";
-  document.getElementById('modoEditar').style.display = "none";
-  document.getElementById('generarLink').style.display = "none";
-  document.getElementById('menu-share').style.display = "none";
+ 
+
+
+
+
   }
 
 
@@ -900,27 +947,26 @@ function modoEditar(){
       var nombre = document.getElementById('nombre').value;
       var apellidos = document.getElementById('apellidos').value;
       var name = nombre + "-" + apellidos;
+
+       
+
+       url = window.location.href + '&name='+ name + "&";  
+
+        //orden del url: secHabilidades + secEducacion + secReferencias + secExperienciaLaboral + secInformacionPersonal + cantHabilidades + cantEducacion... 
+       url += "sec%" + secHabilidadesDatos + "sec%" + secEducacionDatos + "sec%" + secReferenciasDatos + "sec%" + secExperienciaLaboralDatos + "sec%" + secInformacionPersonalDatos  + "sec%"+  "cant%"+cantHabilidadesDatos + "cant%"+cantEducacionDatos + "cant%"+cantReferenciasDatos + "cant%"+cantExperienciaLaboralDatos ;
+
       
+  
 
-       url = window.location.href + '&name='+ name;  
-      // url2 =  window.location.search + '&name='+name;
-        
-      $(document).ready(function(){ 
-         // alert("Su link es: " + url);
-         //url = window.location.href + '&name='+ name;
-         //
-        });
-        
-
-        toastr.options = {
-          timeOut: 0,
-          extendedTimeOut: 0,
-          tapToDismiss: false,
-          closeButton: true,
-          positionClass: "toast-bottom-center"
-      };
-        toastr.success( url );
-        
+          toastr.options = {
+            timeOut: 0,
+            extendedTimeOut: 0,
+            tapToDismiss: false,
+            closeButton: true,
+            positionClass: "toast-bottom-center"
+        };
+          toastr.success( url );
+          
         //toastr.info("Su link es: " + url/*, "¡Aviso!"*/); 
      
         
@@ -930,7 +976,9 @@ function modoEditar(){
 
   }
 
-            $(document).ready(function () {
+
+
+         $(document).ready(function () {
 
               url = window.location.href
               
@@ -939,14 +987,163 @@ function modoEditar(){
               //alert(name);
               //alert("url: " + url);
 
+            
               if(name != url){
 
-                modoFinal();
+                var datos = name.substring(name.indexOf("&") + 1);
+
+                
+                //Separa toda la seccion de datos del resto del url
+                var res = datos.split("sec%");
+                //alert(res);
+
+                //obtiene un array con los cant de las secciones
+                var cant = res[6].split("cant%");
+                //alert(cant);
+                
+              
+                 
+                  //obtiene array con partes de habilidades
+                  var datosHabilidades = res[1].split("_");
+                  llenarHabilidades(cant[1], datosHabilidades);
+
+
+                  var datosCentrosEducativos = res[2].split("_");       
+                  llenarCentrosEducativos(cant[2], datosCentrosEducativos);
+
+
+                  var datosReferencias = res[3].split("_");        
+                  llenarReferencias(cant[3], datosReferencias);
+
+                  var datosExperienciaLaboral = res[4].split("_");   
+                  llenarExperienciaLaboral(cant[4], datosExperienciaLaboral);
+
+                  var datosInformacionPersonal = res[5].split("_");   
+                  llenarInformacionPersonal( datosInformacionPersonal);
+                  //alert(datosInformacionPersonal);      
+
+
+                 modoFinal();
 
               }
 
 
-            });
+          });
+
+
+            function llenarInformacionPersonal( datosInformacionPersonal ){
+                
+             
+              var lNombre = document.getElementById("lNombre");
+              var lApellidos = document.getElementById("lApellidos");
+              var lEMail = document.getElementById("lEMail");
+              var lTelefono = document.getElementById("lTelefono");
+              var lResumen = document.getElementById("lResumen");
+
+              lNombre.innerText = datosInformacionPersonal[1];
+              lApellidos.innerText = datosInformacionPersonal[2];
+              lEMail.innerText = datosInformacionPersonal[3];
+              lTelefono.innerText = datosInformacionPersonal[4];
+              lResumen.innerText = datosInformacionPersonal[5];
+
+            
+
+              lNombre.style.display = "block";
+              lApellidos.style.display = "block";
+              lEMail.style.display = "block";
+              lTelefono.style.display = "block";
+              lResumen.style.display = "block";
+
+          
+            }
+
+            function llenarExperienciaLaboral(cantidad, datosExperienciaLaboral ){
+              
+              for(var i = 0; i < cantidad; i++){
+ 
+                cInicio = datosExperienciaLaboral[1+6*i];
+                cFinal = datosExperienciaLaboral[2+6*i];
+                cNombre = datosExperienciaLaboral[3+6*i];
+                cTitulo = datosExperienciaLaboral[4+6*i];
+                cDescripcion = datosExperienciaLaboral[5+6*i];
+                cUbicacion = datosExperienciaLaboral[6+6*i];
+
+                $('.works').append('<div class="card"> <div class="row">  <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p align="center"> '+ cInicio +' - '+ cFinal +' </p> <div class="h5">'+cNombre+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5" align="center">'+ cTitulo +'</div> <p> '+ cDescripcion +' <br> Ubicación: '+ cUbicacion +' </p>  </div> </div> </div> </div> </div>');
+
+
+              }
+            
+            }
+
+
+            function llenarReferencias(cantidad, datosReferencias ){
+            
+             
+              for(var i = 0; i < cantidad; i++){
+              
+                nombreRef = datosReferencias[1+7*i];
+                apellidosRef = datosReferencias[2+7*i];
+                profesionRef = datosReferencias[3+7*i];
+                empresaRef = datosReferencias[4+7*i];
+                telefonoRef = datosReferencias[5+7*i];
+                eMailRef = datosReferencias[6+7*i];
+                recomendacionRef = datosReferencias[7+7*i];
+               
+                var id = ($('.referencias .control-group').length + 1).toString();
+
+                $('.referencias ').append( '<div class="card" data-aos="zoom-in"><div class="carousel slide" id="cc-Indicators" data-ride="carousel"><ol class="carousel-indicators"></ol><div class="carousel-inner"><div class="carousel-item active"><div class="row"><div class="col-lg-2 col-md-3 cc-reference-header">' + /*<img src="images/reference-image-1.jpg" alt="Image"/>*/'' + '<div class="h5 pt-2">' + nombreRef + ' ' + apellidosRef + ' ' + '</div><p class="category"></p></div><div class="col-lg-10 col-md-9"><p>' + profesionRef + ' | ' + empresaRef + '<br><br>' + 'Teléfono: ' + telefonoRef + ' | ' + 'e-mail: ' + eMailRef + '<br><br>' + recomendacionRef + '</p></div></div></div></div></div></div></div></div></div>' );
+        
+              }
+            
+            }
+
+
+            function llenarCentrosEducativos(cantidad, datosCenEducativos ){
+
+               
+              for(var i = 0; i < cantidad; i++){
+
+              fechasCentroEducativo = datosCenEducativos[1+4*i];
+              ubicacionCentroEducativo = datosCenEducativos[2+4*i];
+              tituloCentroEducativo = datosCenEducativos[3+4*i];
+              nombreCentroEducativo = datosCenEducativos[4+4*i];
+
+              //alert(datosCenEducativos);
+              var id = ($('.centrosEducativos .control-group').length + 1).toString();
+
+              $('.centrosEducativos ').append(' <div class="card"> <div class="row">  <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"><div class="card-body cc-education-header"><p class="h5">' + fechasCentroEducativo +'</p><br><div class="h5">' + ubicacionCentroEducativo + '</div></div></div><div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"><div class="card-body"><div class="h2">' + tituloCentroEducativo + '</div><h3 align="center"> ' + nombreCentroEducativo + '</h3></div></div></div></div>');
+               
+              }
+              
+            }
+
+
+            function llenarHabilidades(cantidad, datosHabilidades ){
+
+             
+             
+                //itera en secHabilidades con cantHabilidades -> cant[1] -> arguments[0]
+               for(var i = 0; i < cantidad; i++){
+
+                  nombreHabilidad = datosHabilidades[1+3*i];
+                  porcentajeHabilidad = datosHabilidades[2+3*i];
+                  nivelHabilidad = datosHabilidades[3+3*i];
+                
+
+                  //Agrega dinamicamente código en la página
+                  var id = ($('.skills .control-group').length + 1).toString();
+                            
+                  $('.skills .row').append(' <div  class="control-group col-md-6 " id="control-group' + id + '" >   <div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
+
+                }
+
+            }
+
+
+           
+
+
+
 
 
             function openFile(){
@@ -976,7 +1173,7 @@ function modoEditar(){
             function WriteFile()
 
             {
-            
+            /*
             var fh = fopen("c:\\MyFile.txt", 3); // Open the file for writing
             
             if(fh!=-1) // If the file has been successfully opened
@@ -1009,6 +1206,25 @@ function modoEditar(){
               } else {
                   preview.src = "";
               }
+                 */
          }
+      
+
+
+         function previewFile(){
+          var preview = document.querySelector('img'); //selects the query named img
+          var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+          var reader  = new FileReader();
+   
+          reader.onloadend = function () {
+              preview.src = reader.result;
+          }
+   
+          if (file) {
+              reader.readAsDataURL(file); //reads the data as a URL
+          } else {
+              preview.src = "";
+          }
+     }
        
          previewFile();  //calls the function named previewFile()
