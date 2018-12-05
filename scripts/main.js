@@ -60,6 +60,16 @@ var ubicacionCentroEducativo;
 var tituloCentroEducativo;
 var fechasCentroEducativo;
 
+var secHabilidadesDatos = "";
+var cantHabilidadesDatos = 0;
+var secEducacionDatos = "";
+var cantEducacionDatos = 0;
+var secReferenciasDatos = "";
+var cantReferenciasDatos = 0;
+var secExperienciaLaboralDatos = "";
+var cantExperienciaLaboralDatos = 0;
+var secInformacionPersonalDatos = "";
+
 //Cuando ya la pag esté cargada entonces sigue
 window.onload = function(){
 
@@ -384,8 +394,13 @@ $(document).ready(function () {
       
           $('.skills .row').append(' <div  class="control-group col-md-6 " id="control-group' + id + '" >   <div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
        
+        secHabilidadesDatos +=  "_"+nombreHabilidad + "_"+porcentajeHabilidad + "_"+nivelHabilidad;
+        cantHabilidadesDatos = cantHabilidadesDatos + 1;
+
         document.getElementById('habilidad').style.border = "";
         document.getElementById('habilidad').value = "";
+
+
 
       }else{
 
@@ -702,7 +717,7 @@ function cambiarColorFondo(){
 	  }
 	
 	
-	document.getElementById('seccionExperienciaEdicion').style.display = "none";
+	  document.getElementById('seccionExperienciaEdicion').style.display = "none";
     document.getElementById('seccionHabilidadesEdicion').style.display = "none";
     document.getElementById('seccionEducacionEdicion').style.display = "none";
     document.getElementById('seccionReferenciasEdicion').style.display = "none";
@@ -710,8 +725,9 @@ function cambiarColorFondo(){
 
     document.getElementById('vistaPrevia').style.display = "none";
     document.getElementById('modoEditar').style.display = "block";
-    document.getElementById('generarLink').style.display = "none"; 
+    document.getElementById('generarLink').style.display = "block"; 
   }
+
 
   function modoEditar(){
 	  
@@ -723,7 +739,7 @@ function cambiarColorFondo(){
 		  document.getElementById('seccionInfoPersonalEdicion').style.display = "block";
 	  }
     
-	document.getElementById('seccionExperienciaEdicion').style.display = "block";
+	  document.getElementById('seccionExperienciaEdicion').style.display = "block";
     document.getElementById('seccionHabilidadesEdicion').style.display = "block";
     document.getElementById('seccionEducacionEdicion').style.display = "block";
     document.getElementById('seccionReferenciasEdicion').style.display = "block";
@@ -735,27 +751,6 @@ function cambiarColorFondo(){
   }
 
 
-function modoEditar(){
-	
-	 if(editandoInfoPersonal == false){
-		document.getElementById('botonInfoPersonalEdicion').style.display = "block";
-	  }
-	  else{
-		  document.getElementById('seccionResumenEdicion').style.display = "block";
-		  document.getElementById('seccionInfoPersonalEdicion').style.display = "block";
-	  }
-  
-  document.getElementById('seccionExperienciaEdicion').style.display = "block";
-  document.getElementById('seccionHabilidadesEdicion').style.display = "block";
-  document.getElementById('seccionEducacionEdicion').style.display = "block";
-  document.getElementById('seccionReferenciasEdicion').style.display = "block";
- 
-
-  document.getElementById('vistaPrevia').style.display = "block";
-  document.getElementById('modoEditar').style.display = "none";
-  document.getElementById('generarLink').style.display = "none";
-}
-
 
 
 
@@ -764,19 +759,29 @@ function modoEditar(){
   function modoFinal(){
       
 
-    //Falta ocultar Resumen e información personal
-    //Falta ocultar Experiencia Laboral
+   
+
+    document.getElementById('botonInfoPersonalEdicion').style.display = "none";
+    document.getElementById('seccionResumenEdicion').style.display = "none";
+    document.getElementById('seccionInfoPersonalEdicion').style.display = "none";
+    document.getElementById('seccionExperienciaEdicion').style.display = "none";
+
+    document.getElementById('seccionHabilidadesEdicion').style.display = "none";
+    document.getElementById('seccionEducacionEdicion').style.display = "none";
+    document.getElementById('seccionReferenciasEdicion').style.display = "none";
 
 
-  document.getElementById('seccionHabilidadesEdicion').style.display = "none";
-  document.getElementById('seccionEducacionEdicion').style.display = "none";
-  document.getElementById('seccionReferenciasEdicion').style.display = "none";
+    document.getElementById('vistaPrevia').style.display = "none";
+    document.getElementById('modoEditar').style.display = "none";
+    document.getElementById('generarLink').style.display = "none";
+    document.getElementById('menu-share').style.display = "none";
 
 
-  document.getElementById('vistaPrevia').style.display = "none";
-  document.getElementById('modoEditar').style.display = "none";
-  document.getElementById('generarLink').style.display = "none";
-  document.getElementById('menu-share').style.display = "none";
+ 
+
+
+
+
   }
 
 
@@ -809,27 +814,26 @@ function modoEditar(){
       var nombre = document.getElementById('nombre').value;
       var apellidos = document.getElementById('apellidos').value;
       var name = nombre + "-" + apellidos;
+
+       
+
+       url = window.location.href + '&name='+ name + "&";  
+
+        //orden del url: secHabilidades + secEducacion + secReferencias + secExperienciaLaboral + secInformacionPersonal + cantHabilidades + cantEducacion... 
+       url += "sec%" + secHabilidadesDatos + "sec%" + secEducacionDatos + "sec%" + secReferenciasDatos + "sec%" + secExperienciaLaboralDatos + "sec%" + secInformacionPersonalDatos  + "cant%"+cantHabilidadesDatos + "cant%"+cantEducacionDatos + "cant%"+cantReferenciasDatos + "cant%"+cantExperienciaLaboralDatos ;
+
       
+  
 
-       url = window.location.href + '&name='+ name;  
-      // url2 =  window.location.search + '&name='+name;
-        
-      $(document).ready(function(){ 
-         // alert("Su link es: " + url);
-         //url = window.location.href + '&name='+ name;
-         //
-        });
-        
-
-        toastr.options = {
-          timeOut: 0,
-          extendedTimeOut: 0,
-          tapToDismiss: false,
-          closeButton: true,
-          positionClass: "toast-bottom-center"
-      };
-        toastr.success( url );
-        
+          toastr.options = {
+            timeOut: 0,
+            extendedTimeOut: 0,
+            tapToDismiss: false,
+            closeButton: true,
+            positionClass: "toast-bottom-center"
+        };
+          toastr.success( url );
+          
         //toastr.info("Su link es: " + url/*, "¡Aviso!"*/); 
      
         
@@ -839,7 +843,9 @@ function modoEditar(){
 
   }
 
-            $(document).ready(function () {
+
+
+         $(document).ready(function () {
 
               url = window.location.href
               
@@ -848,14 +854,77 @@ function modoEditar(){
               //alert(name);
               //alert("url: " + url);
 
+            
               if(name != url){
+
+                var datos = name.substring(name.indexOf("&") + 1);
+
+                
+                //Separa toda la seccion de datos del resto del url
+                var res = datos.split("sec%");
+                //alert(res);
+
+                //obtiene un array con los cant de las secciones
+                var cant = res[5].split("cant%");
+                //alert(cant);
+                
+              
+                 
+                 //obtiene array con partes de habilidades
+                  var datosHabilidades = res[1].split("_");
+                  //alert(datosHabilidades)
+                 
+
+                  llenarHabilidades(cant[1], datosHabilidades);
+
+
+                  
+
+
+              
+
+
 
                 modoFinal();
 
               }
 
 
-            });
+          });
+
+
+
+
+            function llenarHabilidades(cantidad, datosHabilidades ){
+
+             
+
+                //itera en secHabilidades con cantHabilidades -> cant[1] -> arguments[0]
+               for(var i = 1; i <= cantidad; i++){
+
+                  porcentajeHabilidad = datosHabilidades[2];
+                  nombreHabilidad = datosHabilidades[1];
+                  nivelHabilidad = datosHabilidades[3];
+                 
+
+                  //Agrega dinamicamente código en la página
+                  var id = ($('.skills .control-group').length + 1).toString();
+                            
+                  $('.skills .row').append(' <div  class="control-group col-md-6 " id="control-group' + id + '" >   <div class="progress-container progress-primary"><span class="progress-badge">' + nombreHabilidad + '</span><div class="progress"><div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + porcentajeHabilidad + '%;"></div><span class="progress-value">' + nivelHabilidad + '</span></div></div></div>');
+
+                  
+
+                }
+         
+                     
+
+               
+
+
+            }
+
+
+
 
 
             function openFile(){
@@ -885,7 +954,7 @@ function modoEditar(){
             function WriteFile()
 
             {
-            
+            /*
             var fh = fopen("c:\\MyFile.txt", 3); // Open the file for writing
             
             if(fh!=-1) // If the file has been successfully opened
@@ -903,3 +972,5 @@ function modoEditar(){
             }
             
             WriteFile();
+           */ 
+          }
