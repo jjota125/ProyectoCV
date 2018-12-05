@@ -43,30 +43,35 @@
       </div>
     </header>
     <div class="page-content" id="seccionPageContent" style="background-color:#FFFFFF">
+      <div>
 <div class="profile-page">
   <div class="wrapper">
     <div class="page-header page-header-small" filter-color="green">
   
       <div class="page-header-image" data-parallax="true" ></div><!--IMAGEN BACKGROUND style="background-image: url('images/cc-bg-1.jpg');"-->
       <div class="container">
-        <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="images/avatar-default-icon.png" alt="Image"/></a></div><!--IMAGEN FOTO-->
-          <!--<input type="file" name="fileupload" value="fileupload" id="fileupload"> 
-          <label for="fileupload"> Select a file to upload</label> <input type="submit" value="submit"> -->
+        <div class="content-center"><br><br><br><br><br><br>
+          <div class="cc-profile-image"><a href="#"><img src="images/foto.png" alt="Image"/></a></div><!--IMAGEN FOTO-->
 
-          <!--<form action="upload.php" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
-        </form> -->
 
-        <form action="upload.php" method="POST" enctype="multipart/form-data" action="upload.php">
-          Select image to upload:
-          <input type="file" name="file">
-          <input type="submit" value="Subir">
-      </form>
+          <input type="file" onchange="previewFile()" id="carga" class="hide"/>
+          <label for="carga" class="btn btn-primary fa fa-plus" id="lCarga"></label><br/>
+          <img src="" height="200" alt="">
+
+
+          <!--<input type="file" onchange="previewFile()" name="imageUpload" id="imageUpload" class="hide"/> 
+            <label for="imageUpload" class="btn btn-primary">Select file</label><br/><br/><br/>
+            <img src="" id="imagePreview" alt="Preview Image" width="200px"/> -->
+
 
         
+
+
+        <!--<div id="editor">
+          <br><br>
+            <button onclick="javascript:demoFromHTML()" class="button">Generar PDF</button>
+          
+          </div>-->
 
           <div class="h2 title">Currículo</div>
           <!--<p class="category text-white">Web Developer, Graphic Designer,  Photographer</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>-->
@@ -150,7 +155,6 @@
                 <!-- Acá se genera el html de cada habilidad con javascript al usar el abbWork -->
         </div>
      <div class="form-horizontal"  style="display: block;" id="seccionExperienciaEdicion">
-       <div id="bypassme">
         <div class="row">
           <!-- Write your comments here -->
           <div class="col-sm-4"><strong class="text-uppercase">Título del puesto</strong></div>
@@ -159,31 +163,31 @@
           <label type="label" id="lTitulo"></label></div>
         </div>
         <div class="row mt-3">
-			<div class="col-sm-4"><strong class="text-uppercase">Nombre de la compañía</strong></div>
+            <div class="col-sm-4"><strong class="text-uppercase">Nombre de la compañía</strong></div>
             <div class="col-sm-8"><input type="text" maxlength="30" placeholder = "Nombre de la compañía" id="nombreC" required>
             <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="apellidos" required>Click para añadir apellidos</label> -->
             <label type="label" id="lNombreC"></label></div>  
         </div>
         <div class="row mt-3">
-			<div class="col-sm-4"><strong class="text-uppercase">Ubicación</strong></div>
+            <div class="col-sm-4"><strong class="text-uppercase">Ubicación</strong></div>
             <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "Ubicación" id="ubicacion" required>
             <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
             <label type="label" id="lUbicacion"></label></div>  
         </div>
         <div class="row mt-3">
-			<div class="col-sm-4"><strong class="text-uppercase">Descripción del trabajo</strong> </div>
+            <div class="col-sm-4"><strong class="text-uppercase"> Descripción del trabajo</strong> </div>
             <textarea rows="8" cols="50" maxlength="300" id="descirpcion" required></textarea> 
             <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="email" required>Click para añadir E-mail</label> -->
             <label type="label" id="lDescripcion"></label>  
         </div>
         <div class="row mt-3">
-			<div class="col-sm-4"><strong class="text-uppercase">Fecha de inicio</strong></div>
+            <div class="col-sm-4"><strong class="text-uppercase">Fecha de inicio</strong></div>
             <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "Fecha de inicio aquí" id="inicio" required>
             <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
             <label type="label" id="linicio"></label></div>  
         </div>
         <div class="row mt-3">
-			<div class="col-sm-4"><strong class="text-uppercase">Fecha de finalización</strong></div>
+            <div class="col-sm-4"><strong class="text-uppercase">Fecha de finalización</strong></div>
             <div class="col-sm-8"><input type="text" maxlength="20" placeholder = "Fecha de final aquí" id="final" required>
             <!-- <div class="col-sm-8"><label type="label" maxlength="20"  contenteditable="true" id="telefono" required>Click para añadir teléfono</label> -->
             <label type="label" id="lFinal"></label></div>  
@@ -195,7 +199,6 @@
           <!--<div class="col-sm-8"><input type="reset"></strong></div>-->
         </div>
       </div>
-		  </div>
     </div>
 	  </div>
   </div>
@@ -216,14 +219,13 @@
         </div>
       </div>
       <div class="form-horizontal"  style="display: block;" id="seccionHabilidadesEdicion">
-       <div id="bypassme">
         <div class="control-group">
-			<strong class="text-uppercase"> Ingrese el nombre de la habilidad </strong>
+          <strong class="text-uppercase"> Ingrese el nombre de la habilidad </strong>
           <div class="controls">
             <input type="text" placeholder="Habilidad" size="30" id="habilidad" required />
           </div>
           <br>
-			<strong class="text-uppercase"> Seleccione el nivel de la habilidad </strong>
+          <strong class="text-uppercase"> Seleccione el nivel de la habilidad </strong>
           <br>
           <select name="nivelHabilidad" id="nivelHabilidad">
             <option value="Principiante">Principiante</option>
@@ -234,7 +236,6 @@
         <br>
         <button type="submit" class="btn btn-primary" id="agregarHabilidad" >Agregar habilidad</button>
       </div>
-	  </div>
     </div>
   </div>
 
@@ -252,24 +253,23 @@
         </div>
 
       <div class="form-horizontal" style="display: block;" id="seccionEducacionEdicion">
-         <div id="bypassme">
           <div class="control-group">
-			  <strong class="text-uppercase">Ingrese el nombre del centro educativo</strong>
+            <strong class="text-uppercase"> Ingrese el nombre del centro educativo </strong>
             <div class="controls">
               <input type="text" placeholder="Centro Educativo" size="40" id="nombreCentroEducativo"  required />
             </div>
             <br>
-			  <strong class="text-uppercase"> Ingrese la ubicación del centro educativo </strong>
+            <strong class="text-uppercase"> Ingrese la ubicación del centro educativo</strong>
             <div class="controls">
               <input type="text" placeholder="Ubicación del Centro Educativo" size="40" id="ubicacionCentroEducativo"   required />
             </div>
             <br>
-			  <strong class="text-uppercase">Ingrese el título obtenido</strong>
+            <strong class="text-uppercase"> Ingrese el título obtenido </strong>
             <div class="controls">
               <input type="text" placeholder="Título obtenido" size="40" id="tituloCentroEducativo"  required />
             </div>
             <br>
-			  <strong class="text-uppercase">Ingrese el año de inicio y de finalización </strong>
+            <strong class="text-uppercase"> Ingrese el año de inicio y de finalización </strong>
             <div class="controls">
               <input type="text" placeholder=" Ejemplo: 2001 - 2002,  2001 - Presente" size="30" id="fechasCentroEducativo"  required />
             </div>
@@ -277,7 +277,6 @@
            
             <button type="submit" class="btn btn-primary fa fa-plus" id="agregarCentroEducativo" ></button>
           </div>
-		  </div>
         </div>
   </div>
 </div>
@@ -313,11 +312,11 @@
       </div>
     
       <div class="form-horizontal" id="seccionReferenciasEdicion">
-	  <div id="bypassme">
+
         <table>
             <tr>
-				<td><strong class="text-uppercase">Nombre de la referencia </strong></td>
-				<td><tab1><strong class="text-uppercase">Apellidos de la referencia</strong></tab1></td><br>
+                <td><strong class="text-uppercase"> Nombre de la referencia </strong></td>
+                <td><tab1><strong class="text-uppercase"> Apellidos de la referencia</strong></tab1></td><br>
             </tr>
             <tr>
                 <td><input type="text" placeholder="Nombre" size="40" id="nombreRef"  required /></tab1></td>
@@ -327,8 +326,8 @@
 
         <table>
             <tr>
-				<td><strong class="text-uppercase">Profesión</strong></td>
-				<td><tab1><strong class="text-uppercase">Labora en</strong></tab1></td><br>
+                <td><strong class="text-uppercase"> Profesión</strong></td>
+                <td><tab1><strong class="text-uppercase"> Labora en</strong></tab1></td><br>
             </tr>
             <tr>
                 <td></tab1><input type="text" placeholder="Profesión" size="40" id="profesionRef"   required /></td>
@@ -338,8 +337,8 @@
 
         <table>
             <tr>
-				<td><strong class="text-uppercase">Teléfono </strong></td>
-				<td><tab1><strong class="text-uppercase">E-mail </strong></tab1></td>
+                <td><strong class="text-uppercase"> Teléfono </strong></td>
+                <td><tab1><strong class="text-uppercase"> E-mail </strong></tab1></td>
             </tr>
             <tr>
                 <td></tab1><input type="text" placeholder="Teléfono" size="40" id="telefonoRef"  required /></td>
@@ -349,12 +348,12 @@
 
         <table>
             <tr>
-				<td><strong class="text-uppercase">Recomendación (opcional)</strong></td>
+                <td><strong class="text-uppercase"> Recomendación (opcional)</strong></td>
             </tr>
             </tr>
         </table>
 
-</div>
+
 
         <!--<div class="control-group">
           <label class="control-label"> Nombre de la referencia </label>
@@ -393,18 +392,10 @@
           <br>
          
           <button type="submit" class="btn btn-primary fa fa-plus" id="agregarReferencia" ></button>
-    
-
+        </div>
     </div>
   </div>
 </div>
-
-
-        <div class="editor">
-          <br><br>
-            <button onclick="javascript:generaPDF()" class="button">Generar PDF</button>
-          
-          </div>
 
 
 <!-- Espacios para que se vea la animación de referencias-->
@@ -862,6 +853,7 @@
 </div></div>-->
 
 
+    </div>
 
 
     <div class="section" id="seccionFooter">
