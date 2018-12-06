@@ -245,6 +245,13 @@ if (infoPersonalCompleta == true && editandoInfoPersonal == false){
   
 }
 
+function removeWork($item) 
+{
+  var elem = document.getElementById($item);
+  elem.parentNode.removeChild(elem);
+  return false;
+}
+
 function addWork()
 {
   if (!((document.getElementById("titulo").value == "") || (document.getElementById("nombreC").value == "") || (document.getElementById("descirpcion").value == "") || (document.getElementById("inicio").value == "") || (document.getElementById("final").value == "") || (document.getElementById("ubicacion").value == "") ))
@@ -257,7 +264,7 @@ function addWork()
     var cUbicacion = document.getElementById("ubicacion").value;
     
 
-    $('.works').append('<div class="card"> <div class="row">  <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p align="center"> '+ cInicio +' - '+ cFinal +' </p> <div class="h5">'+cNombre+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5" align="center">'+ cTitulo +'</div> <p> '+ cDescirpcion +' <br> Ubicación: '+ cUbicacion +' </p>  </div> </div> </div> </div> </div>');
+    $('.works').append('<div class="container cc-experience" id="work'+ workId +'"> <div class="row"> <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p> '+ cInicio +' - '+ cFinal +' </p> <div class="h5">'+cNombre+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5">'+ cTitulo +'</div> <p> '+ cDescirpcion +' <br> Ubicación: '+ cUbicacion +' </p> </div> </div> <button type="submit" class="btn btn-primary" onclick="removeWork('+temp+')"  id="bInfoPersonal">-</button> </div> </div> <br>');
 
 
     secExperienciaLaboralDatos +=  "_"+cInicio + "_"+cFinal + "_"+cNombre + "_"+cTitulo + "_"+cDescirpcion + "_"+cUbicacion;
