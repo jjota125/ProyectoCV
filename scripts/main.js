@@ -272,12 +272,12 @@ function addWork()
 
 
 
-    document.getElementById("titulo").value = "";
-    document.getElementById("nombreC").value = "";
-    document.getElementById("descirpcion").value = "";
-    document.getElementById("inicio").value = "";
-    document.getElementById("final").value = "";
-    document.getElementById("ubicacion").value = "";
+    document.getElementById("lTitulo").value = "";
+    document.getElementById("lNombreC").value = "";
+    document.getElementById("lDescripcion").value = "";
+    document.getElementById("linicio").value = "";
+    document.getElementById("lFinal").value = "";
+    document.getElementById("lUbicacion").value = "";
 
     titulo.style.border ="";
     nombreC.style.border ="";
@@ -644,7 +644,7 @@ function addReferencia()
     var eMailRef = document.getElementById("eMailRef").value;
     var referenciaRef = document.getElementById("referenciaRef").value;
 
-    $('.works').append('<div class="container cc-experience"> <div class="row"> <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p>  </p> <div class="h5">'+ nombreRef +' '+apellidosRef+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5">'+ empresaRef + " | " + profesionRef + '</div> <p> '+ "Teléfono: " +telefonoRef + ' | ' + 'e-Mail: ' + eMailRef + '<br><br>' + referenciaRef + '</p> </div> </div> </div> </div> <br>');
+    $('.referencias').append('<div class="container cc-experience"> <div class="row"> <div class="col-md-3 bg-primary aos-init aos-animate" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500"> <div class="card-body cc-experience-header"> <p>  </p> <div class="h5">'+ nombreRef +' '+apellidosRef+'</div> </div> </div> <div class="col-md-9 aos-init aos-animate" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500"> <div class="card-body"> <div class="h5">'+ empresaRef + " | " + profesionRef + '</div> <p> '+ "Teléfono: " +telefonoRef + ' | ' + 'e-Mail: ' + eMailRef + '<br><br>' + referenciaRef + '</p> </div> </div> </div> </div> <br>');
 
     document.getElementById("lNombreRef").value = "";
     document.getElementById("lApellidosRef").value = "";
