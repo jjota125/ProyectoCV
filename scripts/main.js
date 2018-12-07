@@ -669,13 +669,13 @@ function addReferencia()
   {
     toastr.info("No ha ingresado toda la información de la referencia"/*, "¡Aviso!"*/);
 
-    if (document.getElementById("nombreRef").value == "")
+    if (nombreRef === "")
     {
-      nombreRef.style.border ="2px solid red";
+      document.getElementById("nombreRef").style.border ="2px solid red";
     }
     else 
     {
-      nombreRef.style.border ="";
+      document.getElementById("nombreRef").style.border ="";
     }
 
     if (document.getElementById("apellidosRef").value == "")

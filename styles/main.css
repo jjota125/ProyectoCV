@@ -7123,10 +7123,6 @@ Created using IcoMoon - icomoon.io
   width: 300px;
   position: absolute;
   left: 0;
-  -webkit-animation: pulsate 1.6s ease-out;
-          animation: pulsate 1.6s ease-out;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
   opacity: 0.0;
   z-index: 99;
 }
@@ -7140,18 +7136,12 @@ Created using IcoMoon - icomoon.io
   margin: 0;
   border: 15px solid transparent;
   z-index: 9999;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
 }
 
 .cc-profile-image a:hover img {
-  -webkit-transform: scale(1.06, 1.06);
-          transform: scale(1.06, 1.06);
 }
 
 .cc-profile-image a:hover:before {
-  -webkit-animation: none;
-          animation: none;
 }
 
 /* Profile Page Social button Style */
@@ -7459,4 +7449,5 @@ a#menu-share:hover > i{
 label {
   width:200px;
   display: inline-block;
+  text-align: center;
 }
