@@ -848,7 +848,7 @@ function cambiarColorFondo(){
     document.getElementById('seccionHabilidadesEdicion').style.display = "none";
     document.getElementById('seccionEducacionEdicion').style.display = "none";
     document.getElementById('seccionReferenciasEdicion').style.display = "none";
-    document.getElementById('lCarga').style.display = "none";
+    document.getElementById('foto').style.display = "none";
    
 
     document.getElementById('vistaPrevia').style.display = "none";
@@ -880,7 +880,7 @@ function cambiarColorFondo(){
     document.getElementById('seccionHabilidadesEdicion').style.display = "block";
     document.getElementById('seccionEducacionEdicion').style.display = "block";
     document.getElementById('seccionReferenciasEdicion').style.display = "block";
-    document.getElementById('lCarga').style.display = "block";
+    document.getElementById('foto').style.display = "block";
    
 
     document.getElementById('vistaPrevia').style.display = "block";
